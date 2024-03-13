@@ -4,53 +4,66 @@ using UnityEngine;
 
 public class SwipeController : MonoBehaviour
 {
-    public Vector3 m_InictialClick;
-    public Vector3 m_FinalClick;
-    public float m_movementArea;
+
+    Vector3 m_ClickInicial;
+    Vector3 m_AlSoltarClick;
+
+    public float m_Offset = 100f;
+    public float m_Duration = 1f;
+
     public GameObject m_Player;
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            m_InictialClick = Input.mousePosition;
+            m_ClickInicial = Input.mousePosition;
         }
 
-         if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            m_FinalClick = Input.mousePosition;
-            Vector3 difference = m_FinalClick - m_InictialClick;
-            Debug.Log(difference);
-                if(difference.x < m_movementArea)
-                {
-                    Debug.Log("Se ha movido a la izq");
-                    MoveTarget(- m_Player.GetComponent<Transform>().right);
-                }
-                if(difference.x > 0)
-                {
-                    Debug.Log("Se ha movido a la dcha");
-                    MoveTarget(m_Player.GetComponent<Transform>().left);
-                }
-                if(difference.y > 0)
-                {
-                    Debug.Log("Se ha movido hacia arriba");
-                    MoveTarget(m_Player.GetComponent<Transform>().left);
-                }
-                if(difference.y < 0)
-                {
-                    Debug.Log("Se ha movido abajo");
-                }
-                if(Mathf.Abs(difference.y) <= m_movementArea && Mathf.Abs(difference.x) <= m_movementArea)
-                {
-                    Debug.Log("No se ha movido");
-                }
+            m_AlSoltarClick = Input.mousePosition;
+            Vector3 m_Diferencia = m_AlSoltarClick - m_ClickInicial;
+            Debug.Log(m_Diferencia);
+
+            ///Si X es negativa, izq
+            ///Si X es positiva, dch
+            ///si y es negativa baja
+            ///si y es positiva sube
+
+            if (m_Diferencia.x < -m_Offset)
+            {
+                MoveTarget(-m_Player.GetComponent<Transform>().right);
+            }
+            if (m_Diferencia.y < -m_Offset)
+            {
+                MoveTarget(-m_Player.GetComponent<Transform>().forward);
+            }
+            if (m_Diferencia.x > m_Offset)
+            {
+                Debug.Log("Se ha movido hacia la dch");
+                MoveTarget(m_Player.GetComponent<Transform>().right);
+
+            }
+            if (m_Diferencia.y > m_Offset)
+            {
+                Debug.Log("Se ha movido hacia arriba");
+                MoveTarget(m_Player.GetComponent<Transform>().forward);
+            }
+
+
+
         }
+    }
+
+
+    void MoveTarget(Vector3 m_Direction)
+    {
+        LeanTween.move(m_Player, m_Player.transform.position + m_Direction, m_Duration).setEase(LeanTweenType.easeOutQuad);
     }
 }
