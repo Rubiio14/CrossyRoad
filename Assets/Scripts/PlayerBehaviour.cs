@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerBehaviour : MonoBehaviour
+{
+	
+	public SwipeController m_Movement;
+
+	public float m_Offset = 100f;
+    public float m_Duration = 1f;
+    public GameObject m_Player;
+
+	public void Awake()
+	{
+		m_Player = this.gameObject;
+	}
+
+	public void Start()
+	{
+		m_Movement.OnMovement += MoveTarget;
+	}
+
+	public void OnDisable()
+	{
+		m_Movement.OnMovement -= MoveTarget;
+	}
+
+	void MoveTarget(Vector3 m_Direction)
+    {
+        LeanTween.move(m_Player, m_Player.transform.position  + new Vector3(m_Direction.x, 0, 0) + Vector3.up, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() => 
+        {
+            LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_Direction.x, 0, 0) - Vector3.up, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);
+        });
+		
+       
+    }
+	
+}
