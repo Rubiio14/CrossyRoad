@@ -25,12 +25,11 @@ public class SwipeController : MonoBehaviour
 	    }
 	    else
 	    {
-		    SwipeController.instance = this;
+            SwipeController.instance = this;
 	    }
     }
     
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
