@@ -38,8 +38,25 @@ public class LevelPedazo : MonoBehaviour
         {
             m_TerrainGeneratorManager.RecycleTerrain(m_Terrain);
             m_IsRecycled = true;
-            m_TerrainGeneratorManager.NewLevelZone();
+            
         }
       
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Entro");
+            m_TerrainGeneratorManager.NewLevelZone();
+        }
+        
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+           
+        }
     }
 }
