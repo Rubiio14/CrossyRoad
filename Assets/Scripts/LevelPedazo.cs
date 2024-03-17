@@ -48,6 +48,7 @@ public class LevelPedazo : MonoBehaviour
         {
             Debug.Log("Entro");
             m_TerrainGeneratorManager.NewLevelZone();
+           
         }
         
     }

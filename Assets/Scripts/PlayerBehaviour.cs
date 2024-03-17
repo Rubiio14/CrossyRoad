@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
 	
-	public SwipeController m_Movement;
+	public SwipeController m_SwipeController;
 
 	public float m_Offset = 100f;
     public float m_Duration = 1f;
@@ -18,12 +18,12 @@ public class PlayerBehaviour : MonoBehaviour
 
 	public void Start()
 	{
-		m_Movement.OnMovement += MoveTarget;
+		m_SwipeController.OnMovement += MoveTarget;
 	}
 
 	public void OnDisable()
 	{
-		m_Movement.OnMovement -= MoveTarget;
+		m_SwipeController.OnMovement -= MoveTarget;
 	}
 
 	void MoveTarget(Vector3 m_Direction)

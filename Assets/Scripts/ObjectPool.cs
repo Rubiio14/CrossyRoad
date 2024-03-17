@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    
     private static ObjectPool instance;
 
-    
-    static Dictionary<int, Queue<GameObject>> pool = new Dictionary<int, Queue<GameObject>>();
-   
-    static Dictionary<int, GameObject> parents = new Dictionary<int, GameObject>();
+    private static Dictionary<int, Queue<GameObject>> pool = new Dictionary<int, Queue<GameObject>>();
+    private static Dictionary<int, GameObject> parents = new Dictionary<int, GameObject>();
+    private static HashSet<int> preloadedPrefabs = new HashSet<int>();
 
     void Awake()
     {
@@ -18,110 +16,99 @@ public class ObjectPool : MonoBehaviour
         {
             instance = this;
         }
-        else 
+        else
         {
             Destroy(this);
         }
     }
 
-    ///Preload objects on the ObjectPool
+    /// Preload objects into the ObjectPool
     public static void PreLoad(GameObject objectToPool, int amount)
-    { 
-        
+    {
         int id = objectToPool.GetInstanceID();
 
-        
+        if (preloadedPrefabs.Contains(id))
+        {
+            Debug.LogWarning("Prefab already preloaded into the ObjectPool.");
+            return;
+        }
+
         GameObject parent = new GameObject();
-        
         parent.name = objectToPool.name + " Pool";
-        
         parents.Add(id, parent);
 
-        
         pool.Add(id, new Queue<GameObject>());
 
         for (int i = 0; i < amount; i++)
         {
             CreateObject(objectToPool);
         }
+
+        preloadedPrefabs.Add(id);
     }
 
-    ///Create an object on the ObjectPool
-    static void CreateObject(GameObject objectToPool)
+    /// Create an object in the ObjectPool
+    private static void CreateObject(GameObject objectToPool)
     {
-        
         int id = objectToPool.GetInstanceID();
-        
         GameObject go = Instantiate(objectToPool) as GameObject;
-        
         go.transform.SetParent(GetParent(id).transform);
-        
         go.SetActive(false);
-        
         pool[id].Enqueue(go);
-        
     }
 
-    
-    static GameObject GetParent(int parentID)
-    {
-        
-        GameObject parent;
-        parents.TryGetValue(parentID, out parent);
-        return parent;
-    }
-
-    ///Returns the object
+    /// Retrieve an object from the ObjectPool
     public static GameObject GetObject(GameObject objectToPool)
     {
-        
         int id = objectToPool.GetInstanceID();
 
-        
         if (pool[id].Count == 0)
         {
             CreateObject(objectToPool);
         }
-        
+
         GameObject go = pool[id].Dequeue();
         go.SetActive(true);
 
         return go;
-
     }
 
-    ///Recycle the object
-    public static void RecicleObject(GameObject objectToPool, GameObject objectToRecicle)
-    { 
-        
+    /// Recycle an object into the ObjectPool
+    public static void RecycleObject(GameObject objectToPool, GameObject objectToRecycle)
+    {
         int id = objectToPool.GetInstanceID();
-        
-        pool[id].Enqueue(objectToRecicle);
-        objectToRecicle.SetActive(false);
+        pool[id].Enqueue(objectToRecycle);
+        objectToRecycle.SetActive(false);
     }
-    ///Clears the objects from the pool
+
+    /// Clear all objects from the ObjectPool
     public static void ClearPool()
     {
-        foreach (var m_FirstDictionary in pool)
+        foreach (var queue in pool.Values)
         {
-            Queue<GameObject> queue = m_FirstDictionary.Value;
-            foreach (GameObject m_Obj in queue)
+            foreach (GameObject obj in queue)
             {
-                Destroy(m_Obj);
+                Destroy(obj);
             }
             queue.Clear();
         }
 
         pool.Clear();
 
-        foreach (var m_SecondDictionary in parents)
+        foreach (var parent in parents.Values)
         {
-            GameObject parent = m_SecondDictionary.Value;
             Destroy(parent);
         }
 
         parents.Clear();
+        preloadedPrefabs.Clear();
     }
 
-
+    /// Retrieve the parent object for a given prefab ID
+    private static GameObject GetParent(int parentID)
+    {
+        GameObject parent;
+        parents.TryGetValue(parentID, out parent);
+        return parent;
+    }
 }

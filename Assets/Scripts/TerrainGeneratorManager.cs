@@ -30,7 +30,7 @@ public class TerrainGeneratorManager : MonoBehaviour
     public void RecycleTerrain(GameObject m_Terrain)
     {
         // Reciclar el terreno utilizando el ObjectPool
-        ObjectPool.RecicleObject(m_TerrainPrefab, m_Terrain);
+        ObjectPool.RecycleObject(m_TerrainPrefab, m_Terrain);
     }
 
     public void NewLevelZone()
