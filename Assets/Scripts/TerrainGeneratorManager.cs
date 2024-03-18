@@ -7,26 +7,18 @@ public class TerrainGeneratorManager : MonoBehaviour
     [SerializeField]
     public GameObject m_TerrainPrefab;
     public int m_Nterrain;
-    public Vector3 m_TerrainSpawn;
+    public GameObject m_TerrainSpawn;
+    public GameObject m_InicialTerrainSpawn;
+    public GameObject[] m_InicialTerrains;
+
 
     void Start()
     {
+        int m_RandomIndex = Random.Range(0, m_InicialTerrains.Length);
         ObjectPool.PreLoad(m_TerrainPrefab, m_Nterrain);
-        GenerateTerrain();
+        m_InicialTerrains[m_RandomIndex].transform.position = m_InicialTerrainSpawn.transform.position;
     }
 
-    void GenerateTerrain()
-    {
-        // Calcular la posición de generación de terreno una vez
-        m_TerrainSpawn = m_TerrainPrefab.transform.position;
-
-        for (int i = 0; i < 2; i++)
-        {
-            // Generar terrenos en la posición calculada
-            GameObject m_Terrain = ObjectPool.GetObject(m_TerrainPrefab);
-            m_Terrain.transform.position = m_TerrainSpawn + Vector3.forward * i * m_TerrainPrefab.GetComponent<Renderer>().bounds.size.z;
-        }
-    }
     public void RecycleTerrain(GameObject m_Terrain)
     {
         // Reciclar el terreno utilizando el ObjectPool
@@ -36,6 +28,6 @@ public class TerrainGeneratorManager : MonoBehaviour
     public void NewLevelZone()
     {
         GameObject m_Terrain = ObjectPool.GetObject(m_TerrainPrefab);
-        m_Terrain.transform.position = m_TerrainSpawn + Vector3.forward * m_TerrainPrefab.GetComponent<Renderer>().bounds.size.z;
+        m_Terrain.transform.position = m_TerrainSpawn.transform.position;
     }
 }
