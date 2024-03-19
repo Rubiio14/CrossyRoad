@@ -45,7 +45,6 @@ public class SwipeController : MonoBehaviour
             if(Mathf.Abs(m_Diferencia.magnitude) > m_Offset)
             {
                 m_Diferencia = m_Diferencia.normalized;
-                Debug.Log(m_Diferencia);
                 m_Diferencia.z = m_Diferencia.y;
                 
                 if(Mathf.Abs(m_Diferencia.x) > Mathf.Abs(m_Diferencia.z))

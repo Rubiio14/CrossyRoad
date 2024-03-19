@@ -6,6 +6,10 @@ TagManager:
   tags:
   - ReturnWaypoint
   - Car
+  - Object
+  - Terrain
+  - BackSpawnProps
+  - ProceduralTerrain
   layers:
   - Default
   - TransparentFX
