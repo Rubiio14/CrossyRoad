@@ -2547,6 +2547,7 @@ GameObject:
   - component: {fileID: 142519294}
   - component: {fileID: 142519293}
   - component: {fileID: 142519292}
+  - component: {fileID: 142519295}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Prop
@@ -2640,6 +2641,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142519289}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &142519295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142519289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11f805a5b8ad224280ba6ac65aa6163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SwipeController: {fileID: 1583044525}
+  m_PlayerBehaviour: {fileID: 1574415818}
 --- !u!1001 &144939078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4262,6 +4277,7 @@ GameObject:
   - component: {fileID: 229056898}
   - component: {fileID: 229056897}
   - component: {fileID: 229056902}
+  - component: {fileID: 229056903}
   m_Layer: 0
   m_Name: PistaAzul
   m_TagString: Terrain
@@ -4511,6 +4527,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30, y: 1, z: 15}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &229056903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229056890}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 30, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.5, z: -3}
 --- !u!1001 &238775207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14671,6 +14708,7 @@ GameObject:
   - component: {fileID: 819865635}
   - component: {fileID: 819865634}
   - component: {fileID: 819865633}
+  - component: {fileID: 819865636}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Prop
@@ -14766,6 +14804,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819865630}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &819865636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819865630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11f805a5b8ad224280ba6ac65aa6163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SwipeController: {fileID: 1583044525}
+  m_PlayerBehaviour: {fileID: 1574415818}
 --- !u!4 &819876659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746176122859108529, guid: bc78c7ec5924f9849a1ac512e4181b9f,
@@ -22294,16 +22346,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PrefabsToPool:
-  - m_Prefab: {fileID: 0}
-    m_PreloadObjects: 0
-  - m_Prefab: {fileID: 142519289}
-    m_PreloadObjects: 4
-  - m_Prefab: {fileID: 1728537646}
-    m_PreloadObjects: 4
-  - m_Prefab: {fileID: 1890884684}
-    m_PreloadObjects: 4
   - m_Prefab: {fileID: 819865630}
-    m_PreloadObjects: 4
+    m_PreloadObjects: 2
+  - m_Prefab: {fileID: 142519289}
+    m_PreloadObjects: 2
+  - m_Prefab: {fileID: 1728537646}
+    m_PreloadObjects: 2
+  - m_Prefab: {fileID: 1890884684}
+    m_PreloadObjects: 2
   m_SpawnPoint: {fileID: 1235352626}
 --- !u!1001 &1237967739
 PrefabInstance:
@@ -26001,6 +26051,7 @@ GameObject:
   - component: {fileID: 1404765269}
   - component: {fileID: 1404765268}
   - component: {fileID: 1404765273}
+  - component: {fileID: 1404765274}
   m_Layer: 0
   m_Name: PistaAmarilla
   m_TagString: Terrain
@@ -26250,6 +26301,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30, y: 1, z: 15}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &1404765274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404765261}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 30, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.5, z: -3}
 --- !u!4 &1414695656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746176122859108529, guid: bc78c7ec5924f9849a1ac512e4181b9f,
@@ -29669,12 +29741,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1590275842}
   - component: {fileID: 1590275841}
-  - component: {fileID: 1590275847}
-  - component: {fileID: 1590275846}
-  - component: {fileID: 1590275845}
-  - component: {fileID: 1590275844}
-  - component: {fileID: 1590275843}
   - component: {fileID: 1590275848}
+  - component: {fileID: 1590275849}
   m_Layer: 0
   m_Name: PistaRosa
   m_TagString: Terrain
@@ -29798,111 +29866,6 @@ Transform:
   - {fileID: 1114349980}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1590275843
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590275836}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9.709595, y: 10.12967, z: 8.687998}
-  m_Center: {x: 9.396324, y: 4.716889, z: -3.8328028}
---- !u!65 &1590275844
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590275836}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 8.882645, y: 10.12967, z: 8.397467}
-  m_Center: {x: -8.025536, y: 4.716889, z: -3.9780684}
---- !u!65 &1590275845
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590275836}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9.515606, y: 11.014663, z: 6.83712}
-  m_Center: {x: -9.679052, y: 5.159385, z: 6.2083893}
---- !u!65 &1590275846
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590275836}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 29.922691, y: 10.30797, z: 5.818016}
-  m_Center: {x: -0.7823677, y: 4.806038, z: -6.7179413}
---- !u!65 &1590275847
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590275836}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.657524, y: 15.057393, z: 6.83712}
-  m_Center: {x: 10.94553, y: 7.1807504, z: 6.2083893}
 --- !u!65 &1590275848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29924,6 +29887,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30, y: 1, z: 15}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &1590275849
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590275836}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 30, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.5, z: -3}
 --- !u!1001 &1591541945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31141,7 +31125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Levelpedazo: {fileID: 297338448}
-  m_EnemiesGenerator: {fileID: 2107812334}
   m_CarSpeed: 10
   m_WaypointTarget: {fileID: 2088467825}
 --- !u!65 &1668366094
@@ -32204,50 +32187,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1704327366}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1707507427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1707507429}
-  - component: {fileID: 1707507428}
-  m_Layer: 0
-  m_Name: ObjectPoolManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1707507428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707507427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d5c11b38f5d5643be32ad15b38ac94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1707507429
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707507427}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5300002, z: 39.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1709388585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32748,6 +32687,7 @@ GameObject:
   - component: {fileID: 1728537651}
   - component: {fileID: 1728537650}
   - component: {fileID: 1728537649}
+  - component: {fileID: 1728537652}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Prop
@@ -32841,6 +32781,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728537646}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1728537652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728537646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11f805a5b8ad224280ba6ac65aa6163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SwipeController: {fileID: 1583044525}
+  m_PlayerBehaviour: {fileID: 1574415818}
 --- !u!1001 &1743206582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34884,6 +34838,7 @@ GameObject:
   - component: {fileID: 1854811299}
   - component: {fileID: 1854811303}
   - component: {fileID: 1854811304}
+  - component: {fileID: 1854811305}
   m_Layer: 0
   m_Name: PistaVerde
   m_TagString: Terrain
@@ -35137,6 +35092,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30, y: 1, z: 15}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &1854811305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854811296}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 30, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.5, z: -3}
 --- !u!1001 &1862222846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35992,6 +35968,7 @@ GameObject:
   - component: {fileID: 1890884689}
   - component: {fileID: 1890884688}
   - component: {fileID: 1890884687}
+  - component: {fileID: 1890884690}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Prop
@@ -36087,6 +36064,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890884684}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1890884690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890884684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11f805a5b8ad224280ba6ac65aa6163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SwipeController: {fileID: 1583044525}
+  m_PlayerBehaviour: {fileID: 1574415818}
 --- !u!1001 &1890967285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37040,6 +37031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NuevoPropsBehaviour: {fileID: 1235352627}
   m_PlayerBehaviour: {fileID: 1574415818}
+  m_Duration: 0.25
 --- !u!4 &1953876403
 Transform:
   m_ObjectHideFlags: 0
@@ -39430,6 +39422,7 @@ MonoBehaviour:
   m_MaxEnemies: 40
   m_SpawnPoints:
   - {fileID: 1815392791}
+  m_Timer: 0
 --- !u!4 &2107812335
 Transform:
   m_ObjectHideFlags: 0
@@ -40925,7 +40918,6 @@ SceneRoots:
   - {fileID: 200057499}
   - {fileID: 1158629602}
   - {fileID: 567326127}
-  - {fileID: 1707507429}
   - {fileID: 369338347}
   - {fileID: 1668366097}
   - {fileID: 2107812335}

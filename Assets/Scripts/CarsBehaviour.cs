@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarsBehaviour : MonoBehaviour
 {
     public LevelPedazo m_Levelpedazo;
-    public EnemiesGenerator m_EnemiesGenerator;
+    //public EnemiesGenerator m_EnemiesGenerator;
     public float m_CarSpeed;
     public GameObject m_WaypointTarget;
 
@@ -27,7 +27,7 @@ public class CarsBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ReturnWaypoint"))
         {
-            m_EnemiesGenerator.RecycleEnemy(this.gameObject);
+            //m_EnemiesGenerator.RecycleEnemy(this.gameObject);
 
         }
 

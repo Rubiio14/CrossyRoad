@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class NuevoPropsBehaviour : MonoBehaviour
 {
+    
     public NuevoPropsGenerator m_NuevoPropsBehaviour;
     public PlayerBehaviour m_PlayerBehaviour;
-
+    GameObject m_RandomPrefabSpawn;
     private bool m_PlayerMoved = false;
-
+    public float m_Duration = 0.25f;
     void Start()
     {
         if (m_PlayerBehaviour == null)
@@ -16,6 +17,7 @@ public class NuevoPropsBehaviour : MonoBehaviour
             enabled = false;
         }
     }
+
 
     void Update()
     {
@@ -30,7 +32,8 @@ public class NuevoPropsBehaviour : MonoBehaviour
         }
     }
 
-    void RandomPrefab()
+    
+    void RandomPrefab ()
     {
         if (m_NuevoPropsBehaviour != null)
         {
@@ -38,9 +41,5 @@ public class NuevoPropsBehaviour : MonoBehaviour
             GameObject m_RandomPrefab = m_NuevoPropsBehaviour.m_PrefabsToPool[m_RandomIndex].m_Prefab;
             GameObject m_RandomPrefabSpawn = m_NuevoPropsBehaviour.GetObject(m_RandomPrefab);          
         }
-    }
-    void MoveObject(GameObject obj)
-    {
-       
     }
 }
