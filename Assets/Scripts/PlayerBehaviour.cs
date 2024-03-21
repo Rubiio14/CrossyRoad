@@ -11,6 +11,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject m_Player;
     public bool m_CanJump = true;
 
+    public static RaycastHit m_RaycastDirection;
     public void Awake()
     {
         m_Player = this.gameObject;
@@ -27,24 +28,20 @@ public class PlayerBehaviour : MonoBehaviour
         m_SwipeController.OnMovement -= MoveTarget;
     }
 
-    void Update()
-    {
-        // No necesitamos el Raycast en Update para este propósito
-    }
-
     void MoveTarget(Vector3 m_Direction)
     {
         if (m_CanJump)
         {
-            RaycastHit hitinfo;
-            Vector3 moveDirection = m_Direction.normalized;
+            RaycastHit m_Hitinfo;
+            Vector3 m_MoveDirection = m_Direction.normalized;
 
-            // Check for obstacles in the movement direction
+            
             if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), m_MoveDirection, out m_Hitinfo, 1f))
             {
                 Debug.Log("Hit Something, Restricting Movement");
 
-               
+                m_RaycastDirection = m_Hitinfo;
+
                 if (m_MoveDirection.x != 0)
                 {
                     m_MoveDirection.x = 0;
@@ -52,7 +49,6 @@ public class PlayerBehaviour : MonoBehaviour
                 
             }
 
-            // Move according to the adjusted direction
             if (m_MoveDirection != Vector3.zero)
             {
                 if (m_MoveDirection.x > 0)
