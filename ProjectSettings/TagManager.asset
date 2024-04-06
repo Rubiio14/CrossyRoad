@@ -11,6 +11,7 @@ TagManager:
   - BackSpawnProps
   - ProceduralTerrain
   - Prop
+  - Coin
   layers:
   - Default
   - TransparentFX

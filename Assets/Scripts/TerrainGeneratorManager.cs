@@ -5,7 +5,6 @@ using UnityEngine;
 public class TerrainGeneratorManager : MonoBehaviour
 {
     [SerializeField]
-    public GameObject m_TerrainPrefab;
     public int m_Nterrain;
     public GameObject m_InicialTerrainSpawn;
     public GameObject m_ProceduralTerrainSpawn;

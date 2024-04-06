@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class StopMovingLevel : MonoBehaviour
 {
-    public LevelPedazo m_LevelPedazo;
+    public NuevoPropsGenerator m_NuevoPropsGenerator;
 
     private void Start()
     {
-        m_LevelPedazo = GameObject.FindObjectOfType<LevelPedazo>();
+    
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("BackSpawnProps"))
+        if (collision.gameObject.CompareTag("Prop"))
         {
-            Debug.Log("No se mueve");
-            m_LevelPedazo.gameObject.SetActive(false);
+            m_NuevoPropsGenerator.RecycleObject(collision.gameObject);
+            Debug.Log(collision.gameObject);
         }
     }
 }

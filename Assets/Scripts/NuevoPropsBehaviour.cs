@@ -21,7 +21,7 @@ public class NuevoPropsBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (m_PlayerBehaviour != null && !m_PlayerMoved && m_PlayerBehaviour.m_CanJump == false)
+        if (m_PlayerBehaviour != null && !m_PlayerMoved && m_PlayerBehaviour.m_CanJump == false && m_PlayerBehaviour.m_StepsBack == 0)
         {
             m_PlayerMoved = true;
             RandomPrefab();

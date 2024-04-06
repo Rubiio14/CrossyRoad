@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     //Movement Variables
     public float m_Offset = 100f;
     public float m_Duration = 1f;
+    public int m_StepsBack = 0; 
     public GameObject m_Player;
 
     public bool m_CanJump = true;
@@ -16,7 +17,8 @@ public class PlayerBehaviour : MonoBehaviour
     //Static Variables
     private static PlayerBehaviour instance;
     public static RaycastHit m_RaycastDirection;
-    
+
+    public GameUI m_GameUI;
 
     public void Awake()
     {
@@ -87,9 +89,18 @@ public class PlayerBehaviour : MonoBehaviour
                 {
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, 0) - Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);
                 });
-
-                if(m_Direction.normalized.z <= 0)
+                //Solo Puede dar 4 pasos hacia atás
+                if (m_StepsBack < 4 && m_Direction.normalized.z <= 0)
                 {
+                    m_StepsBack++;
+                    LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>
+                    {
+                        LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) - Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);
+                    });
+                }
+                if (m_StepsBack != 0 && m_Direction.normalized.z >= 0)
+                {
+                    m_StepsBack--;
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>
                     {
                         LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) - Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);
@@ -106,7 +117,18 @@ public class PlayerBehaviour : MonoBehaviour
         {
             m_CanJump = true;
         }
+
+       
     }
-   
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            m_GameUI.m_Coin++;
+            other.gameObject.SetActive(false);
+        }
+    }
+
 }
 
