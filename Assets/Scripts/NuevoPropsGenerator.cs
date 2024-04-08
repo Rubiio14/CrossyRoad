@@ -4,53 +4,41 @@ using UnityEngine;
 
 public class NuevoPropsGenerator : MonoBehaviour
 {
-    public static NuevoPropsGenerator instance { get; private set; }
-
     [System.Serializable]
-    public struct PrefabData
+    public struct m_PrefabData
     {
+        [SerializeField]
         public GameObject m_Prefab;
-        public int preloadObjects;
+
+        public int m_PreloadObjects;
     }
 
-    public PrefabData[] m_PrefabsToPool;
+    public m_PrefabData[] m_PrefabsToPool;
+    public Transform m_SpawnPoint;
 
-    private Dictionary<int, Queue<GameObject>> prefabDictionary = new Dictionary<int, Queue<GameObject>>();
+    private Dictionary<int, Queue<GameObject>> PrefabsDictionary = new Dictionary<int, Queue<GameObject>>();
 
-    private void Awake()
+    void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        PreLoadPrefabs();
     }
 
-    private void Start()
+    void PreLoadPrefabs()
     {
-        PreloadPrefabs();
-    }
-
-    private void PreloadPrefabs()
-    {
-        foreach (PrefabData data in m_PrefabsToPool)
+        foreach (m_PrefabData m_PrefabData in m_PrefabsToPool)
         {
-            int id = data.m_Prefab.GetInstanceID();
+            int id = m_PrefabData.m_Prefab.GetInstanceID();
 
-            if (!prefabDictionary.ContainsKey(id))
+            if (!PrefabsDictionary.ContainsKey(id))
             {
-                prefabDictionary.Add(id, new Queue<GameObject>());
+                PrefabsDictionary.Add(id, new Queue<GameObject>());
             }
 
-            for (int i = 0; i < data.preloadObjects; i++)
+            for (int i = 0; i < m_PrefabData.m_PreloadObjects; i++)
             {
-                GameObject obj = Instantiate(data.m_Prefab);
+                GameObject obj = Instantiate(m_PrefabData.m_Prefab);
                 obj.SetActive(false);
-                prefabDictionary[id].Enqueue(obj);
-                Debug.Log("Prefab added to dictionary. ID: " + id + ", Queue count: " + prefabDictionary[id].Count);
+                PrefabsDictionary[id].Enqueue(obj);
             }
         }
     }
@@ -59,27 +47,21 @@ public class NuevoPropsGenerator : MonoBehaviour
     {
         int id = prefab.GetInstanceID();
 
-        if (prefabDictionary.ContainsKey(id) && prefabDictionary[id].Count > 0)
+        if (PrefabsDictionary.ContainsKey(id) && PrefabsDictionary[id].Count > 0)
         {
-            GameObject prefabCopy = prefabDictionary[id].Dequeue();
-            prefabCopy.SetActive(true);
-            return prefabCopy;
+            GameObject m_PrefabCopy = PrefabsDictionary[id].Dequeue();
+            m_PrefabCopy.transform.position = m_SpawnPoint.position;
+            m_PrefabCopy.SetActive(true);
+            return m_PrefabCopy;
         }
 
         return null;
     }
 
-    public void RecycleObject(GameObject prefabCopy)
+    public void RecycleObject(GameObject m_PrefabCopy)
     {
-        prefabCopy.SetActive(false);
-
-        int id = prefabCopy.GetInstanceID();
-
-        if (!prefabDictionary.ContainsKey(id))
-        {
-            prefabDictionary.Add(id, new Queue<GameObject>());
-        }
-
-        prefabDictionary[id].Enqueue(prefabCopy);
+        m_PrefabCopy.SetActive(false);
+        int id = m_PrefabCopy.GetInstanceID();
+        PrefabsDictionary[id].Enqueue(m_PrefabCopy);
     }
 }

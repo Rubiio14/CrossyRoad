@@ -15,7 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     public bool m_CanJump = true;
 
     //Static Variables
-    public static PlayerBehaviour instance;
+    private static PlayerBehaviour instance;
     public static RaycastHit m_RaycastDirection;
 
     public GameUI m_GameUI;

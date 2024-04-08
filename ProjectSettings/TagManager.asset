@@ -8,10 +8,10 @@ TagManager:
   - Car
   - Object
   - Terrain
+  - BackSpawnProps
   - ProceduralTerrain
   - Prop
   - Coin
-  - DespawnProp
   layers:
   - Default
   - TransparentFX
