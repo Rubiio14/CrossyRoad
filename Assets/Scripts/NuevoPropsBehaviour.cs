@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class NuevoPropsBehaviour : MonoBehaviour
 {
-    
-    public NuevoPropsGenerator m_NuevoPropsBehaviour;
-    public PlayerBehaviour m_PlayerBehaviour;
-    GameObject m_RandomPrefabSpawn;
+
+    public GameObject Position;
     private bool m_PlayerMoved = false;
-    public float m_Duration = 0.25f;
     void Start()
     {
-        if (m_PlayerBehaviour == null)
+        if (PlayerBehaviour.instance == null)
         {
             enabled = false;
         }
@@ -21,12 +18,12 @@ public class NuevoPropsBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (m_PlayerBehaviour != null && !m_PlayerMoved && m_PlayerBehaviour.m_CanJump == false && m_PlayerBehaviour.m_StepsBack == 0)
+        if (PlayerBehaviour.instance != null && !m_PlayerMoved && PlayerBehaviour.instance.m_CanJump == false && PlayerBehaviour.instance.m_StepsBack == 0)
         {
             m_PlayerMoved = true;
             RandomPrefab();
         }
-        else if (m_PlayerBehaviour != null && m_PlayerMoved && m_PlayerBehaviour.m_CanJump)
+        else if (PlayerBehaviour.instance != null && m_PlayerMoved && PlayerBehaviour.instance.m_CanJump)
         {
             m_PlayerMoved = false;
         }
@@ -35,11 +32,16 @@ public class NuevoPropsBehaviour : MonoBehaviour
     
     void RandomPrefab ()
     {
-        if (m_NuevoPropsBehaviour != null)
+        if (NuevoPropsGenerator.instance != null && Position != null)
         {
-            int m_RandomIndex = Random.Range(0, m_NuevoPropsBehaviour.m_PrefabsToPool.Length);
-            GameObject m_RandomPrefab = m_NuevoPropsBehaviour.m_PrefabsToPool[m_RandomIndex].m_Prefab;
-            GameObject m_RandomPrefabSpawn = m_NuevoPropsBehaviour.GetObject(m_RandomPrefab);          
+            int m_RandomIndex = Random.Range(0, NuevoPropsGenerator.instance.m_PrefabsToPool.Length);
+            GameObject m_RandomPrefab = NuevoPropsGenerator.instance.m_PrefabsToPool[m_RandomIndex].m_Prefab;
+            GameObject m_RandomPrefabSpawn = NuevoPropsGenerator.instance.GetObject(m_RandomPrefab);
+            m_RandomPrefabSpawn.transform.position = Position.transform.position;
+        }
+        else
+        {
+            Debug.LogError("Position object is not assigned or is null.");
         }
     }
 }

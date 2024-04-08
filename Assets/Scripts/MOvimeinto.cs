@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class MOvimeinto : MonoBehaviour
 {
-    public SwipeController m_SwipeController;
-    public PlayerBehaviour m_PlayerBehaviour;
+  
+    
     
     public void Start()
     {
-        m_SwipeController.OnMovement += MoveTarget;
+        SwipeController.instance.OnMovement += MoveTarget;
     }
 
 
     public void OnDisable()
     {
-        m_SwipeController.OnMovement -= MoveTarget;
+        SwipeController.instance.OnMovement -= MoveTarget;
     }
     
 
     void MoveTarget(Vector3 m_Direction)
     {
-        if (m_PlayerBehaviour != null && !m_PlayerBehaviour.m_CanJump)
+        if (PlayerBehaviour.instance != null && !PlayerBehaviour.instance.m_CanJump)
         {        
           LeanTween.move(gameObject, gameObject.transform.position + new Vector3(0, 0, -m_Direction.normalized.z), 0.25f).setEase(LeanTweenType.easeOutQuad); 
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("DespawnProp"))
+        {
+            Debug.Log("Entra");
+            NuevoPropsGenerator.instance.RecycleObject(this.gameObject);
+            //this.gameObject.SetActive(false);
         }
     }
 
