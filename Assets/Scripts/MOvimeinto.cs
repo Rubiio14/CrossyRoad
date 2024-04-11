@@ -23,7 +23,7 @@ public class MOvimeinto : MonoBehaviour
     {
         if (m_PlayerBehaviour != null && !m_PlayerBehaviour.m_CanJump)
         {        
-          LeanTween.move(gameObject, gameObject.transform.position + new Vector3(0, 0, -m_Direction.normalized.z), 0.25f).setEase(LeanTweenType.easeOutQuad); 
+          LeanTween.move(this.gameObject, this.gameObject.transform.position + new Vector3(0, 0, -m_Direction.normalized.z), 0.25f).setEase(LeanTweenType.easeOutQuad); 
         }
     }
 
