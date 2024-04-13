@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public SwipeController m_SwipeController;
+    //public SwipeController m_SwipeController;
+    //public GameUI m_GameUI;
 
     //Movement Variables
     public float m_Offset = 100f;
@@ -12,14 +13,13 @@ public class PlayerBehaviour : MonoBehaviour
     public int m_StepsBack = 0; 
     public GameObject m_Player;
 
-    public bool m_choca = false;
     public bool m_CanJump = true;
 
     //Static Variables
     public static PlayerBehaviour instance;
     public static RaycastHit m_RaycastDirection;
 
-    public GameUI m_GameUI;
+    
 
     public void Awake()
     {
@@ -37,13 +37,13 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Start()
     {
-        m_SwipeController.OnMovement += MoveTarget;
+        SwipeController.instance.OnMovement += MoveTarget;
     }
 
 
     public void OnDisable()
     {
-        m_SwipeController.OnMovement -= MoveTarget;
+        SwipeController.instance.OnMovement -= MoveTarget;
     }
 
     void MoveTarget(Vector3 m_Direction)
@@ -64,7 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
                 {
                     m_MoveDirection.x = 0;
                 }
-                m_choca = true;
+                
                 
             }
 
@@ -87,29 +87,35 @@ public class PlayerBehaviour : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 0, 0);
                 }
 
-                m_choca = false;
+                
                 LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, 0) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>
                 {
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, 0) - Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);
                 });
+                
                 //Solo Puede dar 4 pasos hacia atás
                 if (m_StepsBack < 4 && m_Direction.normalized.z <= 0)
                 {
                     m_StepsBack++;
+                    m_CanJump = false;
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>
                     {
                         LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) - Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);
                     });
+                    
                 }
                 if (m_StepsBack != 0 && m_Direction.normalized.z >= 0)
                 {
+                    
                     m_StepsBack--;
+                    m_CanJump = false;
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>
                     {
                         LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) - Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);
                     });
+                    
                 }
-                m_CanJump = false;
+                
             }
         }
     }
@@ -121,6 +127,12 @@ public class PlayerBehaviour : MonoBehaviour
             m_CanJump = true;
         }
 
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            GameUI.instance.GameEnding();
+            m_Player.SetActive(false);
+            SwipeController.instance.enabled = false;
+        }
        
     }
 
@@ -128,7 +140,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            m_GameUI.m_Coin++;
+            GameUI.instance.m_Coin++;
             other.gameObject.SetActive(false);
         }
     }

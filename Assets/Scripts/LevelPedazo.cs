@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class LevelPedazo : MonoBehaviour
 {
     //Scripts variables
-    public SwipeController m_SwipeController;
+    //public SwipeController m_SwipeController;
     public TerrainGeneratorManager m_TerrainGeneratorManager;
     public PlayerBehaviour m_PlayerBehaviour;
 
@@ -30,14 +30,14 @@ public class LevelPedazo : MonoBehaviour
     }
 
     
-    public void OnEnable()
+    public void Start()
     {
-        m_SwipeController.OnMovement += MoveTarget;
+        SwipeController.instance.OnMovement += MoveTarget;
     }
 
     public void OnDisable()
     {
-        m_SwipeController.OnMovement -= MoveTarget;
+        SwipeController.instance.OnMovement -= MoveTarget;
     }
 
 

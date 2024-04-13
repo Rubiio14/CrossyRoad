@@ -5,9 +5,38 @@ using UnityEngine;
 
 public class GameUI : MonoBehaviour
 {
-    public LevelPedazo m_LevelPedazo;
-
+    public GameObject m_HUD;
+    [SerializeField]
+    public TextMeshProUGUI newRecordLabel;
     
+    public GameObject crownImage;
+   
+    
+    [SerializeField]
+    public GameObject gameEndingScreen;
+   
+    [SerializeField]
+    public TextMeshProUGUI textEnding;
+
+
+    public static GameUI instance;
+    public LevelPedazo m_LevelPedazo;
+    public bool m_NewRecord = false;
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
+    }
+
+
     [SerializeField] TextMeshProUGUI m_StepsText;
     [SerializeField] TextMeshProUGUI m_CoinText;
 
@@ -31,6 +60,7 @@ public class GameUI : MonoBehaviour
 
         if (m_LevelPedazo.m_StepsCounter > m_Record)
         {
+            m_NewRecord = true;
             m_Record = m_LevelPedazo.m_StepsCounter;
             PlayerPrefs.SetInt("Record", m_Record);
             PlayerPrefs.Save();
@@ -43,8 +73,24 @@ public class GameUI : MonoBehaviour
 
     private void UpdateStepText()
     {
-        m_StepsText.text = "Score: " + m_LevelPedazo.m_StepsCounter.ToString() + "/Record: " + m_Record.ToString();
-        m_CoinText.text = "Coins: " + m_Coin.ToString();
+        m_StepsText.text = "Score: " + m_LevelPedazo.m_StepsCounter + "/Record: " + m_Record;
+        m_CoinText.text = "Coins: " + m_Coin;
     }
-
+    
+    public void GameEnding()
+    {
+        gameEndingScreen.SetActive(true);
+        textEnding.text = "Total coins: " + m_Coin + "\nTotal steps: " + m_LevelPedazo.m_StepsCounter;
+        m_HUD.SetActive(false);
+        if (m_NewRecord)
+        {
+            newRecordLabel.text = "New record!";
+            crownImage.SetActive(true);
+        }
+        else
+        {
+            newRecordLabel.text = "Record: " + m_Record;
+        }
+    }
+    
 }

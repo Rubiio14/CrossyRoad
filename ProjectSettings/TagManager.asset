@@ -15,6 +15,7 @@ TagManager:
   - Despawn
   - Despawn1
   - Spawn
+  - Death
   layers:
   - Default
   - TransparentFX
