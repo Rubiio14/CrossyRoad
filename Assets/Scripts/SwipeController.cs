@@ -4,50 +4,64 @@ using UnityEngine;
 
 public class SwipeController : MonoBehaviour
 {
-
     Vector3 m_ClickInicial;
     Vector3 m_AlSoltarClick;
     public float m_Offset = 100f;
-   
-    
-    //Events
+
+    // Events
     public delegate void Movement(Vector3 m_Direction);
     public event Movement OnMovement;
 
-    //Instance
+    // Instance
     public static SwipeController instance;
+
+    // Set to store unique subscribers
+    private HashSet<GameObject> subscribers = new HashSet<GameObject>();
 
     private void Awake()
     {
-	    if (SwipeController.instance != null)
-	    {
+        if (SwipeController.instance != null)
+        {
             Destroy(this);
-	    }
-	    else
-	    {
+        }
+        else
+        {
             SwipeController.instance = this;
-	    }
+        }
     }
-    
+
+    private void Start()
+    {
+        // Subscribe to the OnMovement event
+        OnMovement += PrintSubscription;
+    }
+
+    // Method to print the subscribing object's name
+    void PrintSubscription(Vector3 direction)
+    {
+        // Add the subscribing object to the set
+        subscribers.Add(gameObject);
+        Debug.Log("Object subscribed to OnMovement event: " + gameObject.name);
+        Debug.Log("Number of unique subscribers: " + subscribers.Count);
+    }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             m_ClickInicial = Input.mousePosition;
-
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             m_AlSoltarClick = Input.mousePosition;
             Vector3 m_Diferencia = m_AlSoltarClick - m_ClickInicial;
-            if(Mathf.Abs(m_Diferencia.magnitude) > m_Offset)
+            if (Mathf.Abs(m_Diferencia.magnitude) > m_Offset)
             {
                 m_Diferencia = m_Diferencia.normalized;
                 m_Diferencia.z = m_Diferencia.y;
-                
-                if(Mathf.Abs(m_Diferencia.x) > Mathf.Abs(m_Diferencia.z))
+
+                if (Mathf.Abs(m_Diferencia.x) > Mathf.Abs(m_Diferencia.z))
                 {
                     m_Diferencia.z = 0.0f;
                 }
@@ -56,15 +70,13 @@ public class SwipeController : MonoBehaviour
                     m_Diferencia.x = 0.0f;
                 }
 
-                 m_Diferencia.y = 0.0f;
+                m_Diferencia.y = 0.0f;
 
-                if(OnMovement != null)
+                if (OnMovement != null)
                 {
                     OnMovement(m_Diferencia);
                 }
-
             }
         }
     }
-
 }

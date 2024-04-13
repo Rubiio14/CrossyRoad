@@ -12,6 +12,9 @@ TagManager:
   - ProceduralTerrain
   - Prop
   - Coin
+  - Despawn
+  - Despawn1
+  - Spawn
   layers:
   - Default
   - TransparentFX

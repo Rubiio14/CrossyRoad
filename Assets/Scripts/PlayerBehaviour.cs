@@ -12,6 +12,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int m_StepsBack = 0; 
     public GameObject m_Player;
 
+    public bool m_choca = false;
     public bool m_CanJump = true;
 
     //Static Variables
@@ -63,6 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
                 {
                     m_MoveDirection.x = 0;
                 }
+                m_choca = true;
                 
             }
 
@@ -85,6 +87,7 @@ public class PlayerBehaviour : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 0, 0);
                 }
 
+                m_choca = false;
                 LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, 0) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>
                 {
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, 0) - Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad);

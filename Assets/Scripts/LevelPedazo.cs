@@ -17,7 +17,7 @@ public class LevelPedazo : MonoBehaviour
     public int m_StepsCounter;
 
     //Boolean Variables
-    bool m_CanMove = true;
+    public bool m_CanMove = true;
     private bool m_IsRecycled = false;
 
     //StepsCounter
@@ -47,7 +47,7 @@ public class LevelPedazo : MonoBehaviour
 
         if (m_PlayerBehaviour != null && m_PlayerBehaviour.m_CanJump && m_CanMove)
         {
-
+            
             if (Physics.Raycast(m_PlayerBehaviour.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_Hitinfo, 1f))
             {
                 if (m_Hitinfo.collider.tag != "ProceduralTerrain")
@@ -60,13 +60,14 @@ public class LevelPedazo : MonoBehaviour
                
 
             }
+            
             if(m_Direction.normalized.z >= 0 && m_PlayerBehaviour.m_StepsBack == 0)
             {
                 LeanTween.move(m_Terrain, m_Terrain.transform.position + new Vector3(0, 0, -m_Direction.normalized.z), m_Duration).setEase(LeanTweenType.easeOutQuad);
             }
                
             //Steps Counter
-            Debug.Log(m_StepsCounter);
+            
             if (m_PlayerBehaviour.m_StepsBack == 0 && m_Direction.z >= 0 && Mathf.Abs(m_Direction.x) < Mathf.Abs(m_Direction.z))
             {
                 m_StepsCounter++;
