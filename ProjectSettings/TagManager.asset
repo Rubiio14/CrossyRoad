@@ -16,6 +16,8 @@ TagManager:
   - Despawn1
   - Spawn
   - Death
+  - TroncosDespawn
+  - TroncosSpawn
   layers:
   - Default
   - TransparentFX

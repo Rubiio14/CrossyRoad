@@ -60,20 +60,21 @@ public class Movimiento : MonoBehaviour
                         {
                             m_Diferencia.z = 0;
                         }
-                    }
+                   }
 
 
                 }
                 //Movimiento hacia adelante
-                if (m_Diferencia.normalized.z >= 0)
+                if (m_Diferencia.normalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
                 {
                     LeanTween.move(m_Prop, m_Prop.transform.position + new Vector3(0, 0, -m_Diferencia.normalized.z), 0.25f).setEase(LeanTweenType.easeOutQuad);
                 }
-                //Movimiento hacia atrás
+                /*Movimiento hacia atrás
                 if (m_Diferencia.normalized.z < 0 && PlayerBehaviour.instance.m_StepsBack < 4)
                 {
                     LeanTween.move(m_Prop, m_Prop.transform.position + new Vector3(0, 0, -m_Diferencia.normalized.z), 0.25f).setEase(LeanTweenType.easeOutQuad);
                 }
+                */
                 
             }
         }

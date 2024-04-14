@@ -122,6 +122,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject);
         if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("ProceduralTerrain"))
         {
             m_CanJump = true;
@@ -129,6 +130,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Death"))
         {
+ 
             GameUI.instance.GameEnding();
             m_Player.SetActive(false);
             SwipeController.instance.enabled = false;

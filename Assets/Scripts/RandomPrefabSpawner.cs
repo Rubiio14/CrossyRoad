@@ -30,7 +30,7 @@ public class RandomPrefabSpawner : MonoBehaviour
         }
     }
 
-    void SpawnRandomObject()
+    public void SpawnRandomObject()
     {
         // Si hay objetos inactivos disponibles
         if (inactiveObjects.Count > 0)
