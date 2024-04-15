@@ -1,52 +1,65 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Pool;
+
 public class RandomPrefabSpawner : MonoBehaviour
 {
-    public List<GameObject> objectList = new List<GameObject>(); // Lista de objetos a spawnear
-    public List<GameObject> inactiveObjects = new List<GameObject>(); // Lista de objetos inactivos
-    private GameObject activeObject; // Objeto activo actual
-    public GameObject spawnPoint; // Punto de spawn
+    public List<GameObject> objectsList;
+    public List<GameObject> inactiveObjects = new List<GameObject>();
+    public GameObject activeObject;
 
-    void Start()
+    [SerializeField] GameObject spawnPoint;
+    [SerializeField] GameObject propParent;
+
+    public static RandomPrefabSpawner instance;
+    public void Awake()
     {
-        // Inicializar lista de objetos inactivos
-        foreach (GameObject obj in objectList)
+        if (instance == null)
         {
-            obj.SetActive(false);
-            inactiveObjects.Add(obj);
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+    private void Start()
+    {
+        foreach (GameObject prefab in objectsList)
+        {
+            prefab.SetActive(false);
+            inactiveObjects.Add(prefab);
         }
 
-        // Spawnear el primer objeto
-        SpawnRandomObject();
+        SpawnRandomPrefab();
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        // Cuando el objeto activo sale del trigger, spawnear otro objeto
         if (other.gameObject == activeObject)
         {
-            SpawnRandomObject();
+            SpawnRandomPrefab();
         }
     }
 
-    public void SpawnRandomObject()
+    public void SpawnRandomPrefab()
     {
-        // Si hay objetos inactivos disponibles
         if (inactiveObjects.Count > 0)
         {
-            // Obtener un índice aleatorio
             int randomIndex = Random.Range(0, inactiveObjects.Count);
 
-            // Activar un objeto inactivo aleatorio
             activeObject = inactiveObjects[randomIndex];
             activeObject.SetActive(true);
 
-            // Establecer la posición del objeto spawn
             activeObject.transform.position = spawnPoint.transform.position;
 
-            // Remover el objeto activado de la lista de objetos inactivos
             inactiveObjects.RemoveAt(randomIndex);
+
+            activeObject.transform.parent = propParent.transform;
         }
     }
 }

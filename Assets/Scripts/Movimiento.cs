@@ -1,97 +1,68 @@
-using System;
-using TMPro;
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using static SwipeController;
 
-public class Movimiento : MonoBehaviour
+public class PropMov : MonoBehaviour
 {
-    Vector3 m_ClickInicial;
-    Vector3 m_AlSoltarClick;
-    public float m_Offset = 100f;
-    
 
-    public PlayerBehaviour pb_PlayerBehaviour;
-    public SwipeController m_SwipeController;
 
-    [SerializeField] GameObject m_Player;
-    [SerializeField] GameObject m_Prop;
-    
+    public float pm_Duration = 0.25f;
 
-    public float pb_Duration = 0.25f;
+    [SerializeField] GameObject pm_Terrain;
+    [SerializeField] GameObject pm_Player;
+
+    public bool m_CanMove = true;
+
     public void Awake()
     {
-        m_Prop = this.gameObject;
+        pm_Terrain = this.gameObject;
+        pm_Player = GameObject.FindGameObjectWithTag("Player");
     }
-    private void Update()
+
+    public void Start()
     {
-        RaycastHit m_Hitinfo = PlayerBehaviour.m_RaycastDirection;
-        if (Input.GetMouseButtonDown(0))
-        {
-            m_ClickInicial = Input.mousePosition;
-        }
+        SwipeController.instance.OnMovement += MoveTarget;
+    }
 
-        if (Input.GetMouseButtonUp(0))
+    public void OnDisable()
+    {
+        SwipeController.instance.OnMovement -= MoveTarget;
+    }
+
+    public void MoveTarget(Vector3 t_Direction)
+    {
+        RaycastHit t_HitInfo = PlayerBehaviour.m_RaycastDirection;
+
+        Vector3 t_DirectionNormalized = t_Direction.normalized;
+
+        if (PlayerBehaviour.instance.m_CanJump && m_CanMove)
         {
-            m_AlSoltarClick = Input.mousePosition;
-            Vector3 m_Diferencia = m_AlSoltarClick - m_ClickInicial;
-            if (Mathf.Abs(m_Diferencia.magnitude) > m_Offset)
+            if (Physics.Raycast(pm_Player.transform.position + new Vector3(0, 1f, 0), t_Direction, out t_HitInfo, 1f))
             {
-                m_Diferencia = m_Diferencia.normalized;
-                m_Diferencia.z = m_Diferencia.y;
-
-                if (Mathf.Abs(m_Diferencia.x) > Mathf.Abs(m_Diferencia.z))
+                Debug.Log("Hit Something, Restricting Movement");
+                if (t_HitInfo.collider.tag != "ProceduralTerrain")
                 {
-                    m_Diferencia.z = 0.0f;
-                }
-                else
-                {
-                    m_Diferencia.x = 0.0f;
-                }
-
-                m_Diferencia.y = 0.0f;
-                //Pararlo si el eprsonaje choca
-                if (Physics.Raycast(PlayerBehaviour.instance.transform.position + new Vector3(0, 1f, 0), m_Diferencia, out m_Hitinfo, 1f))
-                {
-                    if (m_Hitinfo.collider.tag != "ProceduralTerrain")
+                    if (t_DirectionNormalized.z != 0)
                     {
-                        if (m_Diferencia.z != 0)
-                        {
-                            m_Diferencia.z = 0;
-                        }
-                   }
+                        t_DirectionNormalized.z = 0;
+                    }
+                }
 
+                Debug.DrawRay(transform.position + new Vector3(0, 1f, 0), transform.forward * t_HitInfo.distance, Color.red);
+            }
 
-                }
-                //Movimiento hacia adelante
-                if (m_Diferencia.normalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
-                {
-                    LeanTween.move(m_Prop, m_Prop.transform.position + new Vector3(0, 0, -m_Diferencia.normalized.z), 0.25f).setEase(LeanTweenType.easeOutQuad);
-                }
-                /*Movimiento hacia atrás
-                if (m_Diferencia.normalized.z < 0 && PlayerBehaviour.instance.m_StepsBack < 4)
-                {
-                    LeanTween.move(m_Prop, m_Prop.transform.position + new Vector3(0, 0, -m_Diferencia.normalized.z), 0.25f).setEase(LeanTweenType.easeOutQuad);
-                }
-                */
-                
+            if (t_DirectionNormalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
+            {
+                LeanTween.move(pm_Terrain, pm_Terrain.transform.position + new Vector3(0, 0, -t_DirectionNormalized.z), pm_Duration).setEase(LeanTweenType.easeOutQuad);
             }
         }
-        
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerBehaviour.instance.m_CanJump = true;
+        }
     }
 }
-
-/*
-    private void Update()
-    {
-        // Mover el objeto hacia atrás continuamente
-        MoveTarget();
-    }
-
-    void MoveTarget()
-    {
-        // Mover el objeto en dirección negativa del eje Z
-        transform.position -= Vector3.forward * Time.deltaTime;
-    }    
-    */

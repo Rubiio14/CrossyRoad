@@ -15,8 +15,6 @@ public class SwipeController : MonoBehaviour
     // Instance
     public static SwipeController instance;
 
-    // Set to store unique subscribers
-    private HashSet<GameObject> subscribers = new HashSet<GameObject>();
 
     private void Awake()
     {
@@ -29,21 +27,7 @@ public class SwipeController : MonoBehaviour
             SwipeController.instance = this;
         }
     }
-
-    private void Start()
-    {
-        // Subscribe to the OnMovement event
-        OnMovement += PrintSubscription;
-    }
-
-    // Method to print the subscribing object's name
-    void PrintSubscription(Vector3 direction)
-    {
-        // Add the subscribing object to the set
-        subscribers.Add(gameObject);
-        Debug.Log("Object subscribed to OnMovement event: " + gameObject.name);
-        Debug.Log("Number of unique subscribers: " + subscribers.Count);
-    }
+    
 
     void Update()
     {
