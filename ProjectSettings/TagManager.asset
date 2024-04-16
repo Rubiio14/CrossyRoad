@@ -18,6 +18,7 @@ TagManager:
   - Death
   - TroncosDespawn
   - TroncosSpawn
+  - Prop1
   layers:
   - Default
   - TransparentFX

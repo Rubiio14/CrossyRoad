@@ -24,6 +24,7 @@ public class MovimientoTroncos : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("sE HACE HIJO");
             collision.transform.SetParent(this.transform);
         }
     }
