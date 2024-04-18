@@ -19,7 +19,19 @@ public class PlayerBehaviour : MonoBehaviour
     public static PlayerBehaviour instance;
     public static RaycastHit m_RaycastDirection;
 
-    
+    //Canvas
+    public CanvasGroup m_CanvasGroup;
+    //Audio
+    [SerializeField]
+    AudioSource m_AudioSource;
+    [SerializeField]
+    AudioSource m_carBeep;
+    [SerializeField]
+    AudioSource m_PlayerDeath;
+    [SerializeField]
+    AudioSource m_WaterPlop;
+    [SerializeField]
+    public AudioSource m_MonkeySound;
 
     public void Awake()
     {
@@ -126,6 +138,7 @@ public class PlayerBehaviour : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Terrain"))
         {
+   
             m_CanJump = true;
         }
 
@@ -136,7 +149,23 @@ public class PlayerBehaviour : MonoBehaviour
             m_Player.SetActive(false);
             SwipeController.instance.enabled = false;
         }
-       
+
+        if (collision.gameObject.CompareTag("Car"))
+        {
+            GameUI.instance.GameEnding();
+            m_carBeep.Play();
+            m_PlayerDeath.Play();
+            m_Player.SetActive(false);
+            SwipeController.instance.enabled = false;
+        }
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            GameUI.instance.GameEnding();
+            m_WaterPlop.Play();
+            m_Player.SetActive(false);
+            SwipeController.instance.enabled = false;
+        }
+
     }
 
     public void OnCollisionExit(Collision collision)
@@ -154,6 +183,15 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             GameUI.instance.m_Coin++;
+            LeanTween.cancel(m_CanvasGroup.gameObject);
+            LeanTween.alphaCanvas(m_CanvasGroup, 1f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+            {
+                LeanTween.alphaCanvas(m_CanvasGroup, 0f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+                {
+                    m_CanvasGroup.alpha = 0f;
+                });
+            });
+            m_AudioSource.Play();
             other.gameObject.SetActive(false);
         }
     }

@@ -85,12 +85,12 @@ public class GameUI : MonoBehaviour
         m_HUD.SetActive(false);
         if (m_NewRecord)
         {
-            newRecordLabel.text = "New record!";
+            newRecordLabel.text = "Record!: " + m_LevelPedazo.m_StepsCounter;
             crownImage.SetActive(true);
         }
         else
         {
-            newRecordLabel.text = "Record: " + m_Record;
+            newRecordLabel.text = "Record: " + m_LevelPedazo.m_StepsCounter;
         }
     }
 

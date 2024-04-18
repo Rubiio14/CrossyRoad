@@ -23,6 +23,7 @@ public class LevelPedazo : MonoBehaviour
     //StepsCounter
     public int m_Counter = 0;
     
+ 
 
     public void Awake()
     {
@@ -71,6 +72,10 @@ public class LevelPedazo : MonoBehaviour
             if (m_PlayerBehaviour.m_StepsBack == 0 && m_Direction.z >= 0 && Mathf.Abs(m_Direction.x) < Mathf.Abs(m_Direction.z))
             {
                 m_StepsCounter++;
+                if (Random.Range(0, 50) == Random.Range(0, 50))
+                { 
+                    PlayerBehaviour.instance.m_MonkeySound.Play();
+                }
             }
             
         }    
@@ -92,5 +97,4 @@ public class LevelPedazo : MonoBehaviour
             m_CanMove = false;
         }
     }
-    
 }

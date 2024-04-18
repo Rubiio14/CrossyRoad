@@ -4,21 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ReturnWaypoint
   - Car
   - Object
   - Terrain
-  - BackSpawnProps
-  - ProceduralTerrain
   - Prop
   - Coin
-  - Despawn
-  - Despawn1
   - Spawn
   - Death
   - TroncosDespawn
   - TroncosSpawn
   - Prop1
+  - Water
   layers:
   - Default
   - TransparentFX

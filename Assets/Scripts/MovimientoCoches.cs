@@ -6,7 +6,9 @@ public class MovimientoCoches : MonoBehaviour
 {
     public Transform[] waypoints;
     public float carSpeed = 5f;
-
+    [SerializeField]
+ 
+    public float m_Delay;
     void Update()
     {
         if (transform.position != waypoints[0].position)
@@ -17,7 +19,6 @@ public class MovimientoCoches : MonoBehaviour
         else
         {
             transform.position = waypoints[1].position;
-        }
+        }       
     }
-
 }
