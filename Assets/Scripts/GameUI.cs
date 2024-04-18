@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
@@ -73,14 +74,14 @@ public class GameUI : MonoBehaviour
 
     private void UpdateStepText()
     {
-        m_StepsText.text = "Score: " + m_LevelPedazo.m_StepsCounter + "/Record: " + m_Record;
+        m_StepsText.text = "Score: " + m_LevelPedazo.m_StepsCounter;
         m_CoinText.text = "Coins: " + m_Coin;
     }
     
     public void GameEnding()
     {
         gameEndingScreen.SetActive(true);
-        textEnding.text = "Total coins: " + m_Coin + "\nTotal steps: " + m_LevelPedazo.m_StepsCounter;
+        textEnding.text = "Coins: " + m_Coin + "\nSteps: " + m_LevelPedazo.m_StepsCounter;
         m_HUD.SetActive(false);
         if (m_NewRecord)
         {
@@ -92,5 +93,14 @@ public class GameUI : MonoBehaviour
             newRecordLabel.text = "Record: " + m_Record;
         }
     }
-    
+
+    public void ResetButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+    }
 }

@@ -62,13 +62,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569630300039268871}
+  - component: {fileID: 3029049372978411477}
   m_Layer: 0
   m_Name: Carretera2CaminosL
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &569630300039268871
 Transform:
   m_ObjectHideFlags: 0
@@ -84,8 +85,30 @@ Transform:
   m_Children:
   - {fileID: 2646291279347127943}
   - {fileID: 1407246033746280093}
+  - {fileID: 4562358714109328117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3029049372978411477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187261551287209950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2.232108}
+  m_Center: {x: 0, y: 0, z: 1.19}
 --- !u!1 &4378993510560954844
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 4378993510560954844}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -313,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 7268812553506575110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.203}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5769998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -409,6 +432,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: long_road_two_pavement (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -497,6 +525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: long_road_two_pavement (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -604,7 +637,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6352616002136992155, guid: b2788c42126f14248ab2fdd78705c4d0,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1658388443368265664}
+      addedObject: {fileID: 9202696569891121543}
   m_SourcePrefab: {fileID: 100100000, guid: b2788c42126f14248ab2fdd78705c4d0, type: 3}
 --- !u!1 &5065738088712040176 stripped
 GameObject:
@@ -612,7 +645,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2189905467047577451}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1658388443368265664
+--- !u!114 &9202696569891121543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -621,7 +654,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5065738088712040176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -712,6 +745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: long_road_two_pavement (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -722,6 +760,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7037349997296896654, guid: dbcb3f2073c1e9540a625703d8b79f3f,
     type: 3}
   m_PrefabInstance: {fileID: 3189698374910678371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3478757155466047156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 569630300039268871}
+    m_Modifications:
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437669102408593955, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_Name
+      value: TerrenoCesped1saltoBueno (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437669102408593955, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 584dfecdd7cbfc748ba92eaafbfabf51, type: 3}
+--- !u!4 &4562358714109328117 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1087555677435597889, guid: 584dfecdd7cbfc748ba92eaafbfabf51,
+    type: 3}
+  m_PrefabInstance: {fileID: 3478757155466047156}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3663361808932851356
 PrefabInstance:
@@ -818,7 +935,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5285174987729393547, guid: 788f99c0acce4384a91a6c213fb34068,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6940494938541852784}
+      addedObject: {fileID: 6393903511459508291}
   m_SourcePrefab: {fileID: 100100000, guid: 788f99c0acce4384a91a6c213fb34068, type: 3}
 --- !u!4 &8126048631649158061 stripped
 Transform:
@@ -832,7 +949,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3663361808932851356}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6940494938541852784
+--- !u!114 &6393903511459508291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -841,7 +958,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8903148629138544919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -925,6 +1042,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: long_road_two_pavement (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1032,7 +1154,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5285174987729393547, guid: 788f99c0acce4384a91a6c213fb34068,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4938549432773036590}
+      addedObject: {fileID: 4143347494596129492}
   m_SourcePrefab: {fileID: 100100000, guid: 788f99c0acce4384a91a6c213fb34068, type: 3}
 --- !u!4 &8470695305331982837 stripped
 Transform:
@@ -1046,7 +1168,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4007801842211900612}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4938549432773036590
+--- !u!114 &4143347494596129492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1055,7 +1177,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9135028668657146703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -1157,7 +1279,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6352616002136992155, guid: b2788c42126f14248ab2fdd78705c4d0,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7688619281934216787}
+      addedObject: {fileID: 1130450875506518196}
   m_SourcePrefab: {fileID: 100100000, guid: b2788c42126f14248ab2fdd78705c4d0, type: 3}
 --- !u!4 &1535819154132662096 stripped
 Transform:
@@ -1171,7 +1293,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5058251935941346417}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7688619281934216787
+--- !u!114 &1130450875506518196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1180,7 +1302,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2169472569179188714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -1264,6 +1386,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: long_road_two_pavement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1371,7 +1498,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8934234302468195902, guid: 40b5728c9a8fc364cbfbaadcdeb1af64,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9000746662791740022}
+      addedObject: {fileID: 8754474931448425301}
   m_SourcePrefab: {fileID: 100100000, guid: 40b5728c9a8fc364cbfbaadcdeb1af64, type: 3}
 --- !u!1 &3615563105204744201 stripped
 GameObject:
@@ -1379,7 +1506,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5319254460399531575}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9000746662791740022
+--- !u!114 &8754474931448425301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1388,7 +1515,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3615563105204744201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -1496,7 +1623,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5285174987729393547, guid: 788f99c0acce4384a91a6c213fb34068,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7311414207799507205}
+      addedObject: {fileID: 2808900383356110315}
   m_SourcePrefab: {fileID: 100100000, guid: 788f99c0acce4384a91a6c213fb34068, type: 3}
 --- !u!1 &200919247943595208 stripped
 GameObject:
@@ -1504,7 +1631,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5445265760552526659}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7311414207799507205
+--- !u!114 &2808900383356110315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1513,7 +1640,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 200919247943595208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -1621,7 +1748,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8934234302468195902, guid: 40b5728c9a8fc364cbfbaadcdeb1af64,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 474303291863479310}
+      addedObject: {fileID: 5646423640308143599}
   m_SourcePrefab: {fileID: 100100000, guid: 40b5728c9a8fc364cbfbaadcdeb1af64, type: 3}
 --- !u!1 &3970589012163669090 stripped
 GameObject:
@@ -1629,7 +1756,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5541287263875344988}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &474303291863479310
+--- !u!114 &5646423640308143599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1638,7 +1765,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3970589012163669090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -1746,7 +1873,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8934234302468195902, guid: 40b5728c9a8fc364cbfbaadcdeb1af64,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4864807643594367730}
+      addedObject: {fileID: 8335054903036631750}
   m_SourcePrefab: {fileID: 100100000, guid: 40b5728c9a8fc364cbfbaadcdeb1af64, type: 3}
 --- !u!1 &3809315323884422395 stripped
 GameObject:
@@ -1754,7 +1881,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5702030852661134021}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4864807643594367730
+--- !u!114 &8335054903036631750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1763,7 +1890,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3809315323884422395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -1871,7 +1998,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5285174987729393547, guid: 788f99c0acce4384a91a6c213fb34068,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7144574563718068951}
+      addedObject: {fileID: 4830667161484295943}
   m_SourcePrefab: {fileID: 100100000, guid: 788f99c0acce4384a91a6c213fb34068, type: 3}
 --- !u!4 &1530741857209828081 stripped
 Transform:
@@ -1885,7 +2012,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6281729356343791552}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7144574563718068951
+--- !u!114 &4830667161484295943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1894,7 +2021,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2194828856985131083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -1978,6 +2105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: long_road_two_pavement (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2068,6 +2200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: long_road_two_pavement (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2157,6 +2294,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: long_road_two_pavement (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2245,6 +2387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: long_road_two_pavement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2352,7 +2499,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8934234302468195902, guid: 40b5728c9a8fc364cbfbaadcdeb1af64,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1659978775263012913}
+      addedObject: {fileID: 2945087653703507397}
   m_SourcePrefab: {fileID: 100100000, guid: 40b5728c9a8fc364cbfbaadcdeb1af64, type: 3}
 --- !u!1 &258286287637509117 stripped
 GameObject:
@@ -2360,7 +2507,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8676563745914680771}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1659978775263012913
+--- !u!114 &2945087653703507397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2369,7 +2516,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 258286287637509117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1d7670ccb4b8c44927210aaff3317a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3583fc8969055469f6016d9c25d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -2459,6 +2606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: long_road_two_pavement (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701824028650639412, guid: dbcb3f2073c1e9540a625703d8b79f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

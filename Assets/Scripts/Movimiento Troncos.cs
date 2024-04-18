@@ -24,8 +24,15 @@ public class MovimientoTroncos : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("sE HACE HIJO");
             collision.transform.SetParent(this.transform);
+
+            float m_Center = transform.position.z;
+
+            //PlayerBehaviour.instance.m_CanJump = true;
+
+            Vector3 m_PlayerPosition = collision.transform.position;
+            m_PlayerPosition.z = m_Center;
+            collision.transform.position = m_PlayerPosition;
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -33,6 +40,7 @@ public class MovimientoTroncos : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.transform.SetParent(null);
+            //PlayerBehaviour.instance.m_CanJump = false;
         }
     }
 }

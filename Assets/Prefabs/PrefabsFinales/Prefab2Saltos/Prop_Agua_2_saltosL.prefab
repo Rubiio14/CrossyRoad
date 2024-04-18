@@ -2549,8 +2549,6 @@ GameObject:
   - component: {fileID: 2771834163598244622}
   - component: {fileID: 2813318861498367017}
   - component: {fileID: 5272143193365737645}
-  - component: {fileID: 6170081741004837710}
-  - component: {fileID: 4419700258457282920}
   m_Layer: 0
   m_Name: Tree_Chopped
   m_TagString: Terrain
@@ -2623,39 +2621,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6170081741004837710
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7049787278750244985}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.54006773, y: 0.6663658, z: 0.5400676}
-  m_Center: {x: 0, y: 1.329525, z: 0}
---- !u!114 &4419700258457282920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7049787278750244985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59aba475bfe972d48a891cc29858486e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7253567025360940235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,8 +3319,6 @@ GameObject:
   - component: {fileID: 9116897041221455863}
   - component: {fileID: 5272134184006025298}
   - component: {fileID: 7984483371341280408}
-  - component: {fileID: 6145398948994444223}
-  - component: {fileID: 251207434322823969}
   m_Layer: 0
   m_Name: Tree_Chopped
   m_TagString: Terrain
@@ -3428,39 +3391,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6145398948994444223
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8488837945097246029}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.54006773, y: 0.6663658, z: 0.5400676}
-  m_Center: {x: 0, y: 1.329525, z: 0}
---- !u!114 &251207434322823969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8488837945097246029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59aba475bfe972d48a891cc29858486e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8526689871141672136
 GameObject:
   m_ObjectHideFlags: 0

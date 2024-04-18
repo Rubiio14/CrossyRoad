@@ -72,19 +72,19 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 if (m_MoveDirection.x > 0)
                 {
-                    transform.eulerAngles = new Vector3(0, -90f, 0);
+                    transform.eulerAngles = new Vector3(0, 90f, 0);
                 }
                 else if (m_MoveDirection.x < 0)
                 {
-                    transform.eulerAngles = new Vector3(0, 90f, 0);
+                    transform.eulerAngles = new Vector3(0, -90f, 0);
                 }
                 else if (m_MoveDirection.z > 0)
                 {
-                    transform.eulerAngles = new Vector3(0, 180f, 0);
+                    transform.eulerAngles = new Vector3(0, 0, 0);
                 }
                 else if (m_MoveDirection.z < 0)
                 {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    transform.eulerAngles = new Vector3(0, 180f, 0);
                 }
 
                 
@@ -116,14 +116,15 @@ public class PlayerBehaviour : MonoBehaviour
                     
                 }
                 
+
             }
         }
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject);
-        if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("ProceduralTerrain"))
+        
+        if (collision.gameObject.CompareTag("Terrain"))
         {
             m_CanJump = true;
         }
@@ -136,6 +137,16 @@ public class PlayerBehaviour : MonoBehaviour
             SwipeController.instance.enabled = false;
         }
        
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Terrain"))
+        {
+            //m_CanJump = false;
+        }
+
     }
 
     public void OnTriggerEnter(Collider other)

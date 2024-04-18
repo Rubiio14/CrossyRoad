@@ -744,8 +744,6 @@ GameObject:
   - component: {fileID: 8822078937533686201}
   - component: {fileID: 6348382398250057480}
   - component: {fileID: 8862984555150571761}
-  - component: {fileID: 4353522208730122456}
-  - component: {fileID: 212101666470083464}
   m_Layer: 0
   m_Name: Tree_Chopped
   m_TagString: Terrain
@@ -821,41 +819,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4353522208730122456
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8533653890130171002, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 1476679144952277717}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158993868363846286}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.54006773, y: 0.6663658, z: 0.5400676}
-  m_Center: {x: 0, y: 1.329525, z: 0}
---- !u!114 &212101666470083464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2330895259903882468, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 1476679144952277717}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158993868363846286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59aba475bfe972d48a891cc29858486e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1176489809841623648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,8 +1575,6 @@ GameObject:
   - component: {fileID: 841664640449118064}
   - component: {fileID: 1909693886062423347}
   - component: {fileID: 6243206459275879657}
-  - component: {fileID: 9100987440647621844}
-  - component: {fileID: 4998472249515763497}
   m_Layer: 0
   m_Name: Tree_Chopped
   m_TagString: Terrain
@@ -1689,41 +1650,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9100987440647621844
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8533653890130171002, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 4168480670272681533}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2686619645932966967}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.54006773, y: 0.6663658, z: 0.5400676}
-  m_Center: {x: 0, y: 1.329525, z: 0}
---- !u!114 &4998472249515763497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2330895259903882468, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 4168480670272681533}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2686619645932966967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59aba475bfe972d48a891cc29858486e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2751187330046146518
 GameObject:
   m_ObjectHideFlags: 0
@@ -6437,8 +6363,6 @@ GameObject:
   - component: {fileID: 5546905773978566280}
   - component: {fileID: 208969301139900296}
   - component: {fileID: 8903180320893925587}
-  - component: {fileID: 2284838794885836606}
-  - component: {fileID: 5345597935061921417}
   m_Layer: 0
   m_Name: Tree_Chopped
   m_TagString: Terrain
@@ -6514,41 +6438,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2284838794885836606
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8533653890130171002, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 5362414582475861507}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631882751185770339}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.54006773, y: 0.6663658, z: 0.5400676}
-  m_Center: {x: 0, y: 1.329525, z: 0}
---- !u!114 &5345597935061921417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2330895259903882468, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 5362414582475861507}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631882751185770339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59aba475bfe972d48a891cc29858486e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7661735148241695317
 GameObject:
   m_ObjectHideFlags: 0
@@ -6665,8 +6554,6 @@ GameObject:
   - component: {fileID: 709248848532236978}
   - component: {fileID: 6962789831796257770}
   - component: {fileID: 2205210811055003927}
-  - component: {fileID: 7020398118439402624}
-  - component: {fileID: 5939670643752339904}
   m_Layer: 0
   m_Name: Tree_Chopped
   m_TagString: Terrain
@@ -6742,41 +6629,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7020398118439402624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8533653890130171002, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 2498443547128498857}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7803839889715687608}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.54006773, y: 0.6663658, z: 0.5400676}
-  m_Center: {x: 0, y: 1.329525, z: 0}
---- !u!114 &5939670643752339904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2330895259903882468, guid: ea5010a55f0315d4782f2d498313bd33,
-    type: 3}
-  m_PrefabInstance: {fileID: 2498443547128498857}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7803839889715687608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59aba475bfe972d48a891cc29858486e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7965142164119389065
 GameObject:
   m_ObjectHideFlags: 0
@@ -8115,7 +7967,8 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 8554744966772144837}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 4145244230117970446, guid: ea5010a55f0315d4782f2d498313bd33, type: 3}
     m_AddedGameObjects: []
@@ -8274,7 +8127,8 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 5564326275263002487}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 4145244230117970446, guid: ea5010a55f0315d4782f2d498313bd33, type: 3}
     m_AddedGameObjects: []
@@ -8612,7 +8466,8 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 7990185875092896288}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 4145244230117970446, guid: ea5010a55f0315d4782f2d498313bd33, type: 3}
     m_AddedGameObjects: []
@@ -8771,7 +8626,8 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 8674826605010911853}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 4145244230117970446, guid: ea5010a55f0315d4782f2d498313bd33, type: 3}
     m_AddedGameObjects: []
