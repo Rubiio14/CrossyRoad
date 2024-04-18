@@ -173,7 +173,7 @@ public class PlayerBehaviour : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Terrain"))
         {
-            //m_CanJump = false;
+            m_CanJump = false;
         }
 
     }
