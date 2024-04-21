@@ -12,7 +12,7 @@ public class DespawnProps : MonoBehaviour
         if (other.CompareTag("Prop"))
         {
             // Si el objeto que entra en el otro collider es un "prop", añadirlo a la lista de prefabs a spawnear
-            RandomPrefabSpawner.instance.inactiveObjects.Add(other.gameObject);
+            RandomPrefabSpawner.instance.m_InactiveObjects.Add(other.gameObject);
             other.gameObject.SetActive(false);
             other.gameObject.transform.parent = null;
         }

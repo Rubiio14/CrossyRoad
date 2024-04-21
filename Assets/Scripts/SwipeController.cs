@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class SwipeController : MonoBehaviour
 {
+    //Vectores 
     Vector3 m_ClickInicial;
     Vector3 m_AlSoltarClick;
     Vector3 m_Click;
     public float m_Offset = 100f;
 
-    // Events
+    //Eventos
     public delegate void Movement(Vector3 m_Direction);
     public event Movement OnMovement;
 
-    // Instance
+    //Singleton
     public static SwipeController instance;
 
 

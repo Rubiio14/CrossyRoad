@@ -5,10 +5,10 @@ using UnityEngine.EventSystems;
 
 public class LevelPedazo : MonoBehaviour
 {
-    //Scripts variables
-    //public SwipeController m_SwipeController;
+    
+    
     public TerrainGeneratorManager m_TerrainGeneratorManager;
-    public PlayerBehaviour m_PlayerBehaviour;
+    
 
     //TerrainMovementVaribales
     public float m_Offset = 100f;
@@ -46,10 +46,10 @@ public class LevelPedazo : MonoBehaviour
     {
         RaycastHit m_Hitinfo = PlayerBehaviour.m_RaycastDirection;
 
-        if (m_PlayerBehaviour != null && m_PlayerBehaviour.m_CanJump && m_CanMove)
+        if (PlayerBehaviour.instance != null && PlayerBehaviour.instance.m_CanJump && m_CanMove)
         {
             
-            if (Physics.Raycast(m_PlayerBehaviour.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_Hitinfo, 1f))
+            if (Physics.Raycast(PlayerBehaviour.instance.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_Hitinfo, 1f))
             {
                 if (m_Hitinfo.collider.tag != "ProceduralTerrain")
                 {
@@ -62,14 +62,14 @@ public class LevelPedazo : MonoBehaviour
 
             }
             
-            if(m_Direction.normalized.z >= 0 && m_PlayerBehaviour.m_StepsBack == 0)
+            if(m_Direction.normalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
             {
                 LeanTween.move(m_Terrain, m_Terrain.transform.position + new Vector3(0, 0, -m_Direction.normalized.z), m_Duration).setEase(LeanTweenType.easeOutQuad);
             }
                
             //Steps Counter
             
-            if (m_PlayerBehaviour.m_StepsBack == 0 && m_Direction.z >= 0 && Mathf.Abs(m_Direction.x) < Mathf.Abs(m_Direction.z))
+            if (PlayerBehaviour.instance.m_StepsBack == 0 && m_Direction.z >= 0 && Mathf.Abs(m_Direction.x) < Mathf.Abs(m_Direction.z))
             {
                 m_StepsCounter++;
                 if (Random.Range(0, 50) == Random.Range(0, 50))

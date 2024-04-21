@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int m_StepsBack = 0; 
     public GameObject m_Player;
 
-    public bool m_CanJump = true;
+    public bool m_CanJump = false;
 
     //Static Variables
     public static PlayerBehaviour instance;

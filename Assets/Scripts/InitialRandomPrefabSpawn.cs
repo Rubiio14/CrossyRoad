@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class InitialRandomPrefabSpawner : MonoBehaviour
 {
-    public List<GameObject> InitialobjectsList;
-    public List<GameObject> InitialinactiveObjects = new List<GameObject>();
-    public GameObject activeObject;
+    //Listas
+    public List<GameObject> m_InitialobjectsList;
+    public List<GameObject> m_InitialinactiveObjects = new List<GameObject>();
+    public GameObject m_ActiveObject;
 
-    [SerializeField] GameObject spawnPoint;
-    [SerializeField] GameObject propParent;
+    //Objeto activo
+    [SerializeField] GameObject m_SpawnPoint;
+    [SerializeField] GameObject m_PropParent;
 
-    private int propsActivated = 0;
-
+    //Contador de props iniciales
+    private int m_PropsActivated = 0;
+    //Spawn de objetos medianos y grandes
     public GameObject m_MiddleSpawnPoint;
 
+    /// <summary>
+    /// En el start desactiva los Objetos de m_ObjectsList y los mete en m_InactiveObjects
+    /// </summary>
     private void Start()
     {
-        foreach (GameObject prefab in InitialobjectsList)
+        foreach (GameObject prefab in m_InitialobjectsList)
         {
             prefab.SetActive(false);
-            InitialinactiveObjects.Add(prefab);
+            m_InitialinactiveObjects.Add(prefab);
         }
 
         SpawnRandomPrefab();
@@ -28,35 +34,38 @@ public class InitialRandomPrefabSpawner : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == activeObject)
+        if (other.gameObject == m_ActiveObject)
         {
             SpawnRandomPrefab();
         }
     }
-
+    /// <summary>
+    /// Método que spawnea un prefab random de la lista de m_InitialinactiveObjects lo elimina de la lista si el contador
+    /// llega a 6 se desactiva este Spawn y se activa el de obstaculos medianos y grandes
+    /// </summary>
     public void SpawnRandomPrefab()
     {
-        if (propsActivated < 7 && propsActivated > 5)
+        if (m_PropsActivated < 7 && m_PropsActivated > 5)
         {
             this.enabled = false;
             m_MiddleSpawnPoint.SetActive(true);
         }
         else
         {
-            if (InitialinactiveObjects.Count > 0)
+            if (m_InitialinactiveObjects.Count > 0)
             {
-                int randomIndex = Random.Range(0, InitialinactiveObjects.Count);
+                int randomIndex = Random.Range(0, m_InitialinactiveObjects.Count);
 
-                activeObject = InitialinactiveObjects[randomIndex];
-                activeObject.SetActive(true);
+                m_ActiveObject = m_InitialinactiveObjects[randomIndex];
+                m_ActiveObject.SetActive(true);
 
-                activeObject.transform.position = spawnPoint.transform.position;
+                m_ActiveObject.transform.position = m_SpawnPoint.transform.position;
 
-                InitialinactiveObjects.RemoveAt(randomIndex);
+                m_InitialinactiveObjects.RemoveAt(randomIndex);
 
-                activeObject.transform.parent = propParent.transform;
+                m_ActiveObject.transform.parent = m_PropParent.transform;
 
-                propsActivated++;
+                m_PropsActivated++;
             }
 
         }

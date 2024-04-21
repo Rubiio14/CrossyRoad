@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class MovimientoTroncos : MonoBehaviour
 {
-    public Transform[] waypoints;
-    public float carSpeed = 5f;
+    //Waypoints
+    public Transform[] m_Waypoints;
+    //Velocidad
+    public float m_LogSpeed = 0f;
+
 
     void Update()
     {
-        if (transform.position != waypoints[0].position)
+        if (transform.position != m_Waypoints[0].position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[0].position, carSpeed * Time.deltaTime);
-            // Vector3 waypointLocation = (waypoints[0].position - transform.position).normalized;
+            transform.position = Vector3.MoveTowards(transform.position, m_Waypoints[0].position, m_LogSpeed * Time.deltaTime);           
         }
         else
         {
-            transform.position = waypoints[1].position;
+            transform.position = m_Waypoints[1].position;
         }
     }
 
+    /// <summary>
+    /// Hace al jugador hijo de los troncos cuadnoo entra, cuando sale se quita el parent 
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.transform.SetParent(this.transform);
-
             float m_Center = transform.position.z;
 
-            //PlayerBehaviour.instance.m_CanJump = true;
+            
 
             Vector3 m_PlayerPosition = collision.transform.position;
             m_PlayerPosition.z = m_Center;
@@ -39,8 +44,7 @@ public class MovimientoTroncos : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.SetParent(null);
-            //PlayerBehaviour.instance.m_CanJump = false;
+            collision.transform.SetParent(null);      
         }
     }
 }

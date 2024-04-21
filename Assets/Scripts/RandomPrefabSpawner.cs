@@ -1,20 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Pool;
 
 public class RandomPrefabSpawner : MonoBehaviour
 {
-    public List<GameObject> objectsList;
-    public List<GameObject> inactiveObjects = new List<GameObject>();
-    public GameObject activeObject;
+    //Listas
+    public List<GameObject> m_ObjectsList;
+    public List<GameObject> m_InactiveObjects = new List<GameObject>();
+    //Objeto activo
+    public GameObject m_ActiveObject;
+    //Spawn y GameObject de movimiento de Prefabs
+    [SerializeField] GameObject m_SpawnPoint;
+    [SerializeField] GameObject m_PropParent;  
 
-    [SerializeField] GameObject spawnPoint;
-    [SerializeField] GameObject propParent;
-
+    //Singleton
     public static RandomPrefabSpawner instance;
     public void Awake()
     {
@@ -27,12 +26,15 @@ public class RandomPrefabSpawner : MonoBehaviour
             Destroy(this);
         }
     }
+    /// <summary>
+    /// En el start desactiva los Objetos de m_ObjectsList y los mete en m_InactiveObjects
+    /// </summary>
     private void Start()
     {
-        foreach (GameObject prefab in objectsList)
+        foreach (GameObject prefab in m_ObjectsList)
         {
             prefab.SetActive(false);
-            inactiveObjects.Add(prefab);
+            m_InactiveObjects.Add(prefab);
         }
 
         SpawnRandomPrefab();
@@ -40,28 +42,32 @@ public class RandomPrefabSpawner : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == activeObject)
+        if (other.gameObject == m_ActiveObject)
         {
             SpawnRandomPrefab();
         }
     }
 
+    /// <summary>
+    /// Método que spawnea un prefab random de la lista de m_InactiveObjects lo elimina de la lista si el prefab contiene una moneda
+    /// la activa, de ese modo las monedas se reciclan
+    /// </summary>
     public void SpawnRandomPrefab()
     {
-        if (inactiveObjects.Count > 0)
+        if (m_InactiveObjects.Count > 0)
         {
-            int randomIndex = Random.Range(0, inactiveObjects.Count);
+            int randomIndex = Random.Range(0, m_InactiveObjects.Count);
 
-            activeObject = inactiveObjects[randomIndex];
-            activeObject.SetActive(true);
+            m_ActiveObject = m_InactiveObjects[randomIndex];
+            m_ActiveObject.SetActive(true);
 
-            activeObject.transform.position = spawnPoint.transform.position;
+            m_ActiveObject.transform.position = m_SpawnPoint.transform.position;
 
-            inactiveObjects.RemoveAt(randomIndex);
+            m_InactiveObjects.RemoveAt(randomIndex);
 
-            activeObject.transform.parent = propParent.transform;
+            m_ActiveObject.transform.parent = m_PropParent.transform;
 
-            GameObject m_Coin = activeObject.transform.GetChild(0).gameObject;
+            GameObject m_Coin = m_ActiveObject.transform.GetChild(0).gameObject;
             m_Coin.SetActive(true);
         }
     }

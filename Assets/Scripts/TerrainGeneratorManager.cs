@@ -10,6 +10,7 @@ public class TerrainGeneratorManager : MonoBehaviour
     
     public int m_RandomIndex;
 
+    //Genera un terreno inicial de una lista al empezar el juego en el spawn que se le pase
     void Start()
     {
         m_RandomIndex = Random.Range(0, m_InicialTerrains.Length);

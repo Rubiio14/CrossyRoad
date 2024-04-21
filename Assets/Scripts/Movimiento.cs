@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PropMov : MonoBehaviour
 {
+    //Duracion LeanTween
+    public float m_Duration = 0.25f;
 
-
-    public float pm_Duration = 0.25f;
-
-    [SerializeField] GameObject pm_Terrain;
-    [SerializeField] GameObject pm_Player;
+    
+    [SerializeField] GameObject m_Terrain;
+    [SerializeField] GameObject m_Player;
 
     public bool m_CanMove = true;
 
     public void Awake()
     {
-        pm_Terrain = this.gameObject;
-        pm_Player = GameObject.FindGameObjectWithTag("Player");
+        m_Terrain = this.gameObject;
+        m_Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Start()
@@ -29,31 +29,31 @@ public class PropMov : MonoBehaviour
         SwipeController.instance.OnMovement -= MoveTarget;
     }
 
-    public void MoveTarget(Vector3 t_Direction)
+    public void MoveTarget(Vector3 m_Direction)
     {
-        RaycastHit t_HitInfo = PlayerBehaviour.m_RaycastDirection;
+        RaycastHit m_HitInfo = PlayerBehaviour.m_RaycastDirection;
 
-        Vector3 t_DirectionNormalized = t_Direction.normalized;
+        Vector3 m_DirectionNormalized = m_Direction.normalized;
 
         if (PlayerBehaviour.instance.m_CanJump && m_CanMove)
         {
-            if (Physics.Raycast(pm_Player.transform.position + new Vector3(0, 1f, 0), t_Direction, out t_HitInfo, 1f))
+            if (Physics.Raycast(m_Player.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_HitInfo, 1f))
             {
                 Debug.Log("Hit Something, Restricting Movement");
-                if (t_HitInfo.collider.tag != "ProceduralTerrain")
+                if (m_HitInfo.collider.tag != "ProceduralTerrain")
                 {
-                    if (t_DirectionNormalized.z != 0)
+                    if (m_DirectionNormalized.z != 0)
                     {
-                        t_DirectionNormalized.z = 0;
+                        m_DirectionNormalized.z = 0;
                     }
                 }
 
-                Debug.DrawRay(transform.position + new Vector3(0, 1f, 0), transform.forward * t_HitInfo.distance, Color.red);
+                Debug.DrawRay(transform.position + new Vector3(0, 1f, 0), transform.forward * m_HitInfo.distance, Color.red);
             }
 
-            if (t_DirectionNormalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
+            if (m_DirectionNormalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
             {
-                LeanTween.move(pm_Terrain, pm_Terrain.transform.position + new Vector3(0, 0, -t_DirectionNormalized.z), pm_Duration).setEase(LeanTweenType.easeOutQuad);
+                LeanTween.move(m_Terrain, m_Terrain.transform.position + new Vector3(0, 0, -m_DirectionNormalized.z), m_Duration).setEase(LeanTweenType.easeOutQuad);
             }
         }
     }

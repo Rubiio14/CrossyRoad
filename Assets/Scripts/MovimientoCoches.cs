@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class MovimientoCoches : MonoBehaviour
 {
-    public Transform[] waypoints;
-    public float carSpeed = 5f;
-    [SerializeField]
- 
-    public float m_Delay;
+    //Waypoints
+    public Transform[] m_Waypoints;
+    //Velocidad
+    public float m_CarSpeed = 0f;
+    
+
     void Update()
     {
-        if (transform.position != waypoints[0].position)
+        if (transform.position != m_Waypoints[0].position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[0].position, carSpeed * Time.deltaTime);
-            // Vector3 waypointLocation = (waypoints[0].position - transform.position).normalized;
+            transform.position = Vector3.MoveTowards(transform.position, m_Waypoints[0].position, m_CarSpeed * Time.deltaTime);
+            
         }
         else
         {
-            transform.position = waypoints[1].position;
+            transform.position = m_Waypoints[1].position;
         }       
     }
 }
