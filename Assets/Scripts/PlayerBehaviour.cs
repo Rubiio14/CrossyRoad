@@ -108,6 +108,13 @@ public class PlayerBehaviour : MonoBehaviour
                 //Solo Puede dar 4 pasos hacia atás
                 if (m_StepsBack < 4 && m_Direction.normalized.z <= 0)
                 {
+                    if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), m_MoveDirection, out m_Hitinfo, 1f))
+                    {
+                        if (m_Direction.z != 0)
+                        {
+                            m_Direction.z = 0;
+                        }
+                    }
                     m_StepsBack++;
                     m_CanJump = false;
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>
@@ -118,7 +125,13 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (m_StepsBack != 0 && m_Direction.normalized.z >= 0)
                 {
-                    
+                    if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), m_MoveDirection, out m_Hitinfo, 1f))
+                    {
+                        if (m_Direction.z != 0)
+                        {
+                            m_Direction.z = 0;
+                        }
+                    }
                     m_StepsBack--;
                     m_CanJump = false;
                     LeanTween.move(m_Player, m_Player.transform.position + new Vector3(m_MoveDirection.x / 2, 0, m_MoveDirection.z / 2) + Vector3.up / 2, m_Duration / 2).setEase(LeanTweenType.easeOutQuad).setOnComplete(() =>

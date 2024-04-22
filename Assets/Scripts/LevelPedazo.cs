@@ -51,7 +51,7 @@ public class LevelPedazo : MonoBehaviour
             
             if (Physics.Raycast(PlayerBehaviour.instance.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_Hitinfo, 1f))
             {
-                if (m_Hitinfo.collider.tag != "ProceduralTerrain")
+                if (m_Hitinfo.collider.tag != "Object")
                 {
                     if (m_Direction.z != 0)
                     {
