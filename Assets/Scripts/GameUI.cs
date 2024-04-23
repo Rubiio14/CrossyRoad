@@ -21,7 +21,7 @@ public class GameUI : MonoBehaviour
 
 
     public static GameUI instance;
-    public LevelPedazo m_LevelPedazo;
+    public LevelBehaviour m_LevelBehaviour;
     public bool m_NewRecord = false;
 
     public void Awake()
@@ -47,7 +47,7 @@ public class GameUI : MonoBehaviour
 
     public void Start()
     {
-        m_LevelPedazo.m_StepsCounter = PlayerPrefs.GetInt("Score", 0);
+        m_LevelBehaviour.m_StepsCounter = PlayerPrefs.GetInt("Score", 0);
         m_Record = PlayerPrefs.GetInt("Record", 0);
         m_Coin = PlayerPrefs.GetInt("Monedas", 0);
 
@@ -56,13 +56,13 @@ public class GameUI : MonoBehaviour
 
     public void Update()
     {
-        PlayerPrefs.SetInt("Steps", m_LevelPedazo.m_StepsCounter);
+        PlayerPrefs.SetInt("Steps", m_LevelBehaviour.m_StepsCounter);
         PlayerPrefs.Save();
 
-        if (m_LevelPedazo.m_StepsCounter > m_Record)
+        if (m_LevelBehaviour.m_StepsCounter > m_Record)
         {
             m_NewRecord = true;
-            m_Record = m_LevelPedazo.m_StepsCounter;
+            m_Record = m_LevelBehaviour.m_StepsCounter;
             PlayerPrefs.SetInt("Record", m_Record);
             PlayerPrefs.Save();
         }
@@ -74,23 +74,23 @@ public class GameUI : MonoBehaviour
 
     private void UpdateStepText()
     {
-        m_StepsText.text = "Score: " + m_LevelPedazo.m_StepsCounter;
+        m_StepsText.text = "Score: " + m_LevelBehaviour.m_StepsCounter;
         m_CoinText.text = "Coins: " + m_Coin;
     }
     
     public void GameEnding()
     {
         gameEndingScreen.SetActive(true);
-        textEnding.text = "Coins: " + m_Coin + "\nSteps: " + m_LevelPedazo.m_StepsCounter;
+        textEnding.text = "Coins: " + m_Coin + "\nSteps: " + m_LevelBehaviour.m_StepsCounter;
         m_HUD.SetActive(false);
         if (m_NewRecord)
         {
-            newRecordLabel.text = "Record!: " + m_LevelPedazo.m_StepsCounter;
+            newRecordLabel.text = "Record!: " + m_LevelBehaviour.m_StepsCounter;
             crownImage.SetActive(true);
         }
         else
         {
-            newRecordLabel.text = "Record: " + m_LevelPedazo.m_StepsCounter;
+            newRecordLabel.text = "Record: " + m_LevelBehaviour.m_StepsCounter;
         }
     }
 

@@ -4,6 +4,15 @@ using System.Collections.Generic;
 
 public class RandomPrefabSpawner : MonoBehaviour
 {
+    //Scripts
+    public TerrainGeneratorManager m_TerrainGeneratorManager;
+
+    //Listas de Props por Biomas
+    [SerializeField] GameObject[] m_PropsCesped;
+    [SerializeField] GameObject[] m_PropsNieve;
+    [SerializeField] GameObject[] m_PropsDesierto;
+    [SerializeField] GameObject[] m_PropsCandyLand;
+    [SerializeField] GameObject[][] m_TodosLosProps;
     //Listas
     public List<GameObject> m_ObjectsList;
     public List<GameObject> m_InactiveObjects = new List<GameObject>();
@@ -31,7 +40,15 @@ public class RandomPrefabSpawner : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        foreach (GameObject prefab in m_ObjectsList)
+        m_TodosLosProps = new GameObject[][]
+        {
+        m_PropsCesped,
+        m_PropsNieve,
+        m_PropsDesierto,
+        m_PropsCandyLand
+        };
+
+        foreach (GameObject prefab in m_TodosLosProps[m_TerrainGeneratorManager.m_RandomIndex])
         {
             prefab.SetActive(false);
             m_InactiveObjects.Add(prefab);
