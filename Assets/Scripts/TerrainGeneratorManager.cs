@@ -8,6 +8,7 @@ public class TerrainGeneratorManager : MonoBehaviour
     [SerializeField]
     public GameObject m_InicialTerrainSpawn;
     public GameObject[] m_InicialTerrains;
+    public AudioSource[] m_AmbientMusic;
     public int m_RandomIndex;
     //Pops de 1 salto
     [SerializeField] GameObject[] m_PropsSpawn;
@@ -25,7 +26,9 @@ public class TerrainGeneratorManager : MonoBehaviour
         // Elige Terreno inicial
         m_RandomIndex = Random.Range(0, m_InicialTerrains.Length);
         m_InicialTerrains[m_RandomIndex].transform.position = m_InicialTerrainSpawn.transform.position;
-
+        // Elige Musica Según el Terreno inicial
+        m_AmbientMusic[m_RandomIndex].transform.position = m_InicialTerrainSpawn.transform.position;
+        m_AmbientMusic[m_RandomIndex].Play();
         // Elegir Props correspondientes al terreno inicial
         m_TodosLosProps = new GameObject[][]
         {

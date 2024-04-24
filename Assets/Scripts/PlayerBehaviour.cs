@@ -33,6 +33,9 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField]
     public AudioSource m_MonkeySound;
 
+    //Animations && Effects
+    private Animator anim;
+    public ParticleSystem m_Particles;
     public void Awake()
     {
         if (instance == null)
@@ -50,6 +53,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void Start()
     {
         SwipeController.instance.OnMovement += MoveTarget;
+        anim = GetComponent<Animator>();
     }
 
 
@@ -153,6 +157,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
    
             m_CanJump = true;
+            anim.SetBool("IsJumping", false);
         }
 
         if (collision.gameObject.CompareTag("Death"))
@@ -165,18 +170,23 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Car"))
         {
-            GameUI.instance.GameEnding();
+            
+            anim.SetBool("IsDead", true);
+            StartCoroutine(AnimationDelay());
             m_carBeep.Play();
             m_PlayerDeath.Play();
-            m_Player.SetActive(false);
-            SwipeController.instance.enabled = false;
         }
         if (collision.gameObject.CompareTag("Water"))
         {
-            GameUI.instance.GameEnding();
+            
+            m_Particles.transform.position = m_Player.transform.position;
+            m_Particles.Play();
             m_WaterPlop.Play();
-            m_Player.SetActive(false);
-            SwipeController.instance.enabled = false;
+            m_Player.transform.localScale = Vector3.zero;
+            StartCoroutine(AnimationWaterDelay());
+            
+            
+            
         }
 
     }
@@ -187,6 +197,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Terrain"))
         {
             m_CanJump = false;
+            anim.SetBool("IsJumping", true);
         }
 
     }
@@ -208,6 +219,19 @@ public class PlayerBehaviour : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
-
+    IEnumerator AnimationDelay()
+    { 
+        yield return new WaitForSeconds(1f);
+        GameUI.instance.GameEnding();
+        m_Player.SetActive(false);
+        SwipeController.instance.enabled = false;
+    }
+    IEnumerator AnimationWaterDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        m_Player.SetActive(false);
+        GameUI.instance.GameEnding();
+        SwipeController.instance.enabled = false;
+    }
 }
 
