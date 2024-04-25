@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    //public SwipeController m_SwipeController;
-    //public GameUI m_GameUI;
 
     //Movement Variables
     public float m_Offset = 100f;
