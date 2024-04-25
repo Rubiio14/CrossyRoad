@@ -51,11 +51,19 @@ public class LevelBehaviour : MonoBehaviour
             
             if (Physics.Raycast(PlayerBehaviour.instance.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_Hitinfo, 1f))
             {
-                if (m_Hitinfo.collider.tag == "Object")
+                if (m_Hitinfo.collider.tag == "Object" && m_Hitinfo.collider.tag != "Car")
                 {
                     if (m_Direction.z != 0)
                     {
                         m_Direction.z = 0;
+                    }
+                    if (m_Direction.x != 0)
+                    {
+                        m_Direction.x = 0;
+                    }
+                    if (m_Direction.y != 0)
+                    {
+                        m_Direction.y = 0;
                     }
                 }
                

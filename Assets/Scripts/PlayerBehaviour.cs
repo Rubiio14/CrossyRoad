@@ -25,11 +25,14 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField]
     AudioSource m_carBeep;
     [SerializeField]
+    AudioSource m_CarSound;
+    [SerializeField]
     AudioSource m_PlayerDeath;
     [SerializeField]
     AudioSource m_WaterPlop;
     [SerializeField]
     public AudioSource m_MonkeySound;
+    bool m_IsSoundPlaying;
 
     //Animations && Effects
     private Animator anim;
@@ -60,7 +63,26 @@ public class PlayerBehaviour : MonoBehaviour
         SwipeController.instance.OnMovement -= MoveTarget;
     }
 
-    void MoveTarget(Vector3 m_Direction)
+    private void Update()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 3f))
+        {
+            // Verificar si el objeto tiene la etiqueta "Car"
+            if (hit.collider.CompareTag("Car") && !m_IsSoundPlaying)
+            {
+                // Reproducir el sonido
+                m_CarSound.transform.position = hit.collider.transform.position;
+                m_CarSound.Play();
+                m_IsSoundPlaying = true;
+                StartCoroutine(ResetSoundState());
+            }
+        }
+    }
+
+        void MoveTarget(Vector3 m_Direction)
     {
         if (m_CanJump)
         {
@@ -70,16 +92,27 @@ public class PlayerBehaviour : MonoBehaviour
             
             if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), m_MoveDirection, out m_Hitinfo, 1f))
             {
-                Debug.Log("Hit Something, Restricting Movement");
+
+                //Debug.Log("Hit Something, Restricting Movement");
 
                 m_RaycastDirection = m_Hitinfo;
-
-                if (m_MoveDirection.x != 0)
+                if (m_Hitinfo.collider.tag == "Object")
                 {
-                    m_MoveDirection.x = 0;
+                    if (m_MoveDirection.x != 0)
+                    {
+                        m_MoveDirection.x = 0;
+                    }
+                    if (m_MoveDirection.y != 0)
+                    {
+                        m_MoveDirection.y = 0;
+                    }
+                    if (m_MoveDirection.z != 0)
+                    {
+                        m_MoveDirection.z = 0;
+                    }
                 }
                 
-                
+
             }
 
             if (m_MoveDirection != Vector3.zero)
@@ -148,7 +181,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         
         if (collision.gameObject.CompareTag("Terrain"))
@@ -172,6 +205,7 @@ public class PlayerBehaviour : MonoBehaviour
             anim.SetBool("IsDead", true);
             StartCoroutine(AnimationDelay());
             m_carBeep.Play();
+            SwipeController.instance.enabled = false;
             m_PlayerDeath.Play();
         }
         if (collision.gameObject.CompareTag("Water"))
@@ -181,6 +215,7 @@ public class PlayerBehaviour : MonoBehaviour
             m_Particles.Play();
             m_WaterPlop.Play();
             m_Player.transform.localScale = Vector3.zero;
+            SwipeController.instance.enabled = false;
             StartCoroutine(AnimationWaterDelay());
             
             
@@ -217,19 +252,25 @@ public class PlayerBehaviour : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+
+    IEnumerator ResetSoundState()
+    {
+        yield return new WaitForSeconds(1.5f);
+        m_IsSoundPlaying = false;
+    }
     IEnumerator AnimationDelay()
     { 
         yield return new WaitForSeconds(1f);
         GameUI.instance.GameEnding();
         m_Player.SetActive(false);
-        SwipeController.instance.enabled = false;
+        
     }
     IEnumerator AnimationWaterDelay()
     {
         yield return new WaitForSeconds(1f);
         m_Player.SetActive(false);
         GameUI.instance.GameEnding();
-        SwipeController.instance.enabled = false;
+        
     }
 }
 

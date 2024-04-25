@@ -12,7 +12,7 @@ public class MuerteAgua : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Entra");
+            //Debug.Log("Entra");
             GameUI.instance.GameEnding();
             PlayerBehaviour.instance.gameObject.SetActive(false);
             SwipeController.instance.enabled = false;

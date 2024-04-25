@@ -20,7 +20,7 @@ public class TerrainGeneratorManager : MonoBehaviour
     [SerializeField] GameObject[] m_PropsDesierto;
     [SerializeField] GameObject[] m_PropsCandyLand;
     [SerializeField] GameObject[][] m_TodosLosProps;
-
+    [SerializeField] ParticleSystem[] m_PartycleEffects;
     // Post Processing
     public PostProcessVolume m_CustomPostProcessVolume;
     PostProcessVolume m_PostProcessVolume;
@@ -33,12 +33,15 @@ public class TerrainGeneratorManager : MonoBehaviour
 
         // Elige Terreno inicial
         m_RandomIndex = Random.Range(0, m_InicialTerrains.Length);
+        m_InicialTerrains[m_RandomIndex].SetActive(true);
         m_InicialTerrains[m_RandomIndex].transform.position = m_InicialTerrainSpawn.transform.position;
 
         // Elige Música según el Terreno inicial
         m_AmbientMusic[m_RandomIndex].transform.position = m_InicialTerrainSpawn.transform.position;
         m_AmbientMusic[m_RandomIndex].Play();
 
+        //Elige Efecto Particulas
+        m_PartycleEffects[m_RandomIndex].Play();
         // Asignar el perfil de postprocesamiento aleatorio al volumen de postprocesamiento específico
         m_CustomPostProcessVolume.profile = m_PostProcessProfiles[m_RandomIndex];
 
