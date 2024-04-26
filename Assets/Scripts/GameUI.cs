@@ -50,7 +50,6 @@ public class GameUI : MonoBehaviour
         m_LevelBehaviour.m_StepsCounter = PlayerPrefs.GetInt("Score", 0);
         m_Record = PlayerPrefs.GetInt("Record", 0);
         m_Coin = PlayerPrefs.GetInt("Monedas", 0);
-
         UpdateStepText();
     }
 
