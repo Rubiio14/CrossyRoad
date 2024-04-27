@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
+    public CanvasGroup m_CanvasGroup;
+
     public GameObject m_HUD;
     [SerializeField]
     public TextMeshProUGUI newRecordLabel;
@@ -21,7 +23,6 @@ public class GameUI : MonoBehaviour
 
 
     public static GameUI instance;
-    public LevelBehaviour m_LevelBehaviour;
     public bool m_NewRecord = false;
 
     public void Awake()
@@ -43,29 +44,30 @@ public class GameUI : MonoBehaviour
 
     private int m_Record = 0;
     public int m_Coin = 0;
-   
+    public int m_Score = 0;
+
 
     public void Start()
     {
-        m_LevelBehaviour.m_StepsCounter = PlayerPrefs.GetInt("Score", 0);
-        m_Record = PlayerPrefs.GetInt("Record", 0);
-        m_Coin = PlayerPrefs.GetInt("Monedas", 0);
+        m_Score = PlayerPrefs.GetInt("Score", LevelBehaviour.instance.m_StepsCounter);
+        m_Record = PlayerPrefs.GetInt("Record", LevelBehaviour.instance.m_Record);
+        m_Coin = PlayerPrefs.GetInt("Monedas", PlayerBehaviour.instance.m_Coin);
         UpdateStepText();
     }
 
     public void Update()
     {
-        PlayerPrefs.SetInt("Steps", m_LevelBehaviour.m_StepsCounter);
+        PlayerPrefs.SetInt("Steps", LevelBehaviour.instance.m_StepsCounter);
         PlayerPrefs.Save();
 
-        if (m_LevelBehaviour.m_StepsCounter > m_Record)
+        if (LevelBehaviour.instance.m_StepsCounter > instance.m_Record)
         {
             m_NewRecord = true;
-            m_Record = m_LevelBehaviour.m_StepsCounter;
+            m_Record = LevelBehaviour.instance.m_StepsCounter;
             PlayerPrefs.SetInt("Record", m_Record);
             PlayerPrefs.Save();
         }
-        PlayerPrefs.SetInt("Coins", m_Coin);
+        PlayerPrefs.SetInt("Coins", PlayerBehaviour.instance.m_Coin);
         PlayerPrefs.Save();
         UpdateStepText();
     }
@@ -73,23 +75,23 @@ public class GameUI : MonoBehaviour
 
     private void UpdateStepText()
     {
-        m_StepsText.text = "Score: " + m_LevelBehaviour.m_StepsCounter;
-        m_CoinText.text = "Coins: " + m_Coin;
+        m_StepsText.text = "Score: " + LevelBehaviour.instance.m_StepsCounter;
+        m_CoinText.text = "Coins: " + PlayerBehaviour.instance.m_Coin;
     }
     
     public void GameEnding()
     {
         gameEndingScreen.SetActive(true);
-        textEnding.text = "Coins: " + m_Coin + "\nSteps: " + m_LevelBehaviour.m_StepsCounter;
+        textEnding.text = "Coins: " + PlayerBehaviour.instance.m_Coin + "\nSteps: " + LevelBehaviour.instance.m_StepsCounter;
         m_HUD.SetActive(false);
         if (m_NewRecord)
         {
-            newRecordLabel.text = "Record!: " + m_LevelBehaviour.m_StepsCounter;
+            newRecordLabel.text = "Record!: " + LevelBehaviour.instance.m_StepsCounter;
             crownImage.SetActive(true);
         }
         else
         {
-            newRecordLabel.text = "Record: " + m_LevelBehaviour.m_StepsCounter;
+            newRecordLabel.text = "Record: " + LevelBehaviour.instance.m_StepsCounter;
         }
     }
 

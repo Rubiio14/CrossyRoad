@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    //Coins Counter
+    public int m_Coin = 0;
 
     //Movement Variables
     public float m_Offset = 100f;
     public float m_Duration = 1f;
     public int m_StepsBack = 0; 
     public GameObject m_Player;
-
     public bool m_CanJump = false;
 
     //Static Variables
@@ -18,7 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
     public static RaycastHit m_RaycastDirection;
 
     //Canvas
-    public CanvasGroup m_CanvasGroup;
+    //public CanvasGroup m_CanvasGroup;
     //Audio
     [SerializeField]
     AudioSource m_AudioSource;
@@ -193,8 +194,17 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Death"))
         {
- 
-            GameUI.instance.GameEnding();
+            //LandScape
+            if (GameUI_Portait.instance != null)
+            {
+                GameUI.instance.GameEnding();
+            }
+            //Portait
+            if (GameUI_Portait.instance != null)
+            {
+                GameUI_Portait.instance.GameEnding();
+            }           
+            Camara.instance.m_Disable = false;
             m_Player.SetActive(false);
             SwipeController.instance.enabled = false;
         }
@@ -203,6 +213,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             
             anim.SetBool("IsDead", true);
+            Camara.instance.m_Disable = false;
             StartCoroutine(AnimationDelay());
             m_carBeep.Play();
             SwipeController.instance.enabled = false;
@@ -216,6 +227,7 @@ public class PlayerBehaviour : MonoBehaviour
             m_WaterPlop.Play();
             m_Player.transform.localScale = Vector3.zero;
             SwipeController.instance.enabled = false;
+            Camara.instance.m_Disable = false;
             StartCoroutine(AnimationWaterDelay());
             
             
@@ -239,15 +251,31 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            GameUI.instance.m_Coin++;
-            LeanTween.cancel(m_CanvasGroup.gameObject);
-            LeanTween.alphaCanvas(m_CanvasGroup, 1f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+            m_Coin++;
+            if (GameUI.instance != null) 
             {
-                LeanTween.alphaCanvas(m_CanvasGroup, 0f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+                //Landscape
+                LeanTween.cancel(GameUI.instance.m_CanvasGroup.gameObject);
+                LeanTween.alphaCanvas(GameUI.instance.m_CanvasGroup, 1f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
                 {
-                    m_CanvasGroup.alpha = 0f;
+                    LeanTween.alphaCanvas(GameUI.instance.m_CanvasGroup, 0f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+                    {
+                        GameUI.instance.m_CanvasGroup.alpha = 0f;
+                    });
                 });
-            });
+            }
+            if (GameUI_Portait.instance != null)
+            {
+                //Portait
+                LeanTween.cancel(GameUI_Portait.instance.m_CanvasGroup.gameObject);
+                LeanTween.alphaCanvas(GameUI_Portait.instance.m_CanvasGroup, 1f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+                {
+                    LeanTween.alphaCanvas(GameUI_Portait.instance.m_CanvasGroup, 0f, m_Duration * 4).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+                    {
+                        GameUI_Portait.instance.m_CanvasGroup.alpha = 0f;
+                    });
+                });
+            }
             m_AudioSource.Play();
             other.gameObject.SetActive(false);
         }
@@ -261,16 +289,30 @@ public class PlayerBehaviour : MonoBehaviour
     IEnumerator AnimationDelay()
     { 
         yield return new WaitForSeconds(1f);
-        GameUI.instance.GameEnding();
-        m_Player.SetActive(false);
-        
+        if (GameUI.instance != null)
+        {
+            GameUI.instance.GameEnding();
+            m_Player.SetActive(false);
+        }
+        if (GameUI_Portait.instance != null)
+        {
+            GameUI_Portait.instance.GameEnding();
+            m_Player.SetActive(false);
+        }
     }
     IEnumerator AnimationWaterDelay()
     {
         yield return new WaitForSeconds(1f);
         m_Player.SetActive(false);
-        GameUI.instance.GameEnding();
-        
+        if (GameUI.instance != null)
+        {
+            GameUI.instance.GameEnding();
+        }
+        if (GameUI_Portait.instance != null)
+        {
+            GameUI_Portait.instance.GameEnding();
+        }
+
     }
 }
 

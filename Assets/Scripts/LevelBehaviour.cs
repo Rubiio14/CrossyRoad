@@ -8,13 +8,15 @@ public class LevelBehaviour : MonoBehaviour
     
     
     public TerrainGeneratorManager m_TerrainGeneratorManager;
-    
+
+    //Store Record
+    public int m_Record = 0;
 
     //TerrainMovementVaribales
     public float m_Offset = 100f;
     public float m_Duration = 1f;
     public GameObject m_Terrain;
-    public int m_StepsCounter;
+    public int m_StepsCounter = 0;
 
     //Boolean Variables
     public bool m_CanMove = true;
@@ -22,11 +24,21 @@ public class LevelBehaviour : MonoBehaviour
 
     //StepsCounter
     public int m_Counter = 0;
-    
- 
+
+    //Static Variables
+    public static LevelBehaviour instance;
 
     public void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         m_Terrain = this.gameObject;
     }
 
