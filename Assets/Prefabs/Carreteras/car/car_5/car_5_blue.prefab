@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2704756600352420551}
   - component: {fileID: 4755444072525358717}
   - component: {fileID: 8986347248440606181}
-  - component: {fileID: 6515791259642291426}
-  - component: {fileID: 3457953577257978238}
   m_Layer: 0
   m_Name: body
   m_TagString: Death
@@ -85,48 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6515791259642291426
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657342170832111499}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.019197728, y: 0.007777594, z: 0.043234065}
-  m_Center: {x: -0.00008336931, y: 0.0063164383, z: 0.0016328883}
---- !u!65 &3457953577257978238
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657342170832111499}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01595999, y: 0.0045315386, z: 0.021696059}
-  m_Center: {x: 0.0000000059604637, y: 0.0124335755, z: -0.0021726862}
 --- !u!1 &1745873291780315432
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +813,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8934234302468195902}
   serializedVersion: 4
-  m_Mass: 1080
+  m_Mass: 1050
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -895,5 +851,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 1.5, z: 4.4}
-  m_Center: {x: 0, y: 0.81, z: 0.15}
+  m_Size: {x: 2, y: 1.5, z: 3.2169957}
+  m_Center: {x: 0, y: 0.80999994, z: 0.24201155}

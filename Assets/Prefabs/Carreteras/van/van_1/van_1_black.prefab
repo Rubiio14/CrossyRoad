@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 9212089322352722469}
   - component: {fileID: 7188376218614701710}
   - component: {fileID: 8140329869308982937}
-  - component: {fileID: 282517390327784164}
-  - component: {fileID: 282517390327784165}
   m_Layer: 0
   m_Name: body
   m_TagString: Death
@@ -85,48 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &282517390327784164
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282517390327784170}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.021155974, y: 0.009528893, z: 0.04462035}
-  m_Center: {x: 0.0000000023841857, y: 0.009249596, z: -0.0005200195}
---- !u!65 &282517390327784165
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282517390327784170}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.019731566, y: 0.0072422144, z: 0.04072799}
-  m_Center: {x: 0.0000000023841857, y: 0.01762163, z: -0.0013682812}
 --- !u!1 &2195933579562806912
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,9 +696,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6008600372554642209}
   - component: {fileID: 6352616002136992154}
+  - component: {fileID: 4522120971655824088}
   m_Layer: 0
   m_Name: van_1_black
-  m_TagString: Death
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -773,7 +730,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6352616002136992155}
   serializedVersion: 4
-  m_Mass: 1825
+  m_Mass: 1050
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -792,6 +749,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &4522120971655824088
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352616002136992155}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.0618644, z: 3.8033206}
+  m_Center: {x: 0, y: 1.0495534, z: -0.084949136}
 --- !u!1 &7335163870837288122
 GameObject:
   m_ObjectHideFlags: 0

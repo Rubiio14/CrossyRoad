@@ -17,11 +17,13 @@ public class ScreenOrientationManager : MonoBehaviour
         {
             m_PortraitCanvas.gameObject.SetActive(false);
             m_LandscapeCanvas.gameObject.SetActive(true);
+            Camara.instance.LandScapeCamara();
         }
         else
         {
             m_PortraitCanvas.gameObject.SetActive(true);
             m_LandscapeCanvas.gameObject.SetActive(false);
+            Camara.instance.PortaitCamara();
         }
     }
 
@@ -31,11 +33,13 @@ public class ScreenOrientationManager : MonoBehaviour
         {
             m_PortraitCanvas.gameObject.SetActive(false);
             m_LandscapeCanvas.gameObject.SetActive(true);
+            Camara.instance.LandScapeCamara();
         }
         else
         {
             m_PortraitCanvas.gameObject.SetActive(true);
             m_LandscapeCanvas.gameObject.SetActive(false);
+            Camara.instance.PortaitCamara();
         }
     }
 }

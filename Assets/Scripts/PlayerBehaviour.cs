@@ -195,7 +195,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Death"))
         {
             //LandScape
-            if (GameUI_Portait.instance != null)
+            if (GameUI.instance != null)
             {
                 GameUI.instance.GameEnding();
             }

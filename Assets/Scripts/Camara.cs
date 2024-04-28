@@ -7,7 +7,10 @@ public class Camara : MonoBehaviour
     public Vector3 m_Offset;
     public static Camara instance;
     public bool m_Disable = true;
-    
+    //Posiciones Camara
+    public GameObject m_PortaitPosition;
+    public GameObject m_LandscapePosition;
+
     private void Awake()
     {
         if (instance == null)
@@ -19,14 +22,18 @@ public class Camara : MonoBehaviour
             Destroy(this);
         }
     }
-    
-    private void LateUpdate()
+
+    public void LandScapeCamara()
     {
-        if (m_PlayerTransform != null && m_Disable)
-        {
-            Vector3 m_LastPosition = new Vector3(m_PlayerTransform.position.x + m_Offset.x, transform.position.y, transform.position.z);
-            Vector3 m_SmoothedPosition = Vector3.Lerp(transform.position, m_LastPosition, m_SmoothSpeed * Time.deltaTime);
-            transform.position = m_SmoothedPosition;
-        }
+        Vector3 m_LastPosition = new Vector3(m_PlayerTransform.position.x + m_Offset.x, m_LandscapePosition.transform.position.y, m_LandscapePosition.transform.position.z);
+        Vector3 m_SmoothedPosition = Vector3.Lerp(transform.position, m_LastPosition, m_SmoothSpeed * Time.deltaTime);
+        transform.position = m_SmoothedPosition;
+    }
+
+    public void PortaitCamara()
+    {
+        Vector3 m_LastPosition = new Vector3(m_PlayerTransform.position.x + m_Offset.x, m_PortaitPosition.transform.position.y, m_PortaitPosition.transform.position.z);
+        Vector3 m_SmoothedPosition = Vector3.Lerp(transform.position, m_LastPosition, m_SmoothSpeed * Time.deltaTime);
+        transform.position = m_SmoothedPosition;
     }
 }
