@@ -198,13 +198,11 @@ public class PlayerBehaviour : MonoBehaviour
             if (GameUI.instance != null)
             {
                 GameUI.instance.GameEnding();
-                Camara.instance.m_Disable = false;
             }
             //Portait
             if (GameUI_Portait.instance != null)
             {
                 GameUI_Portait.instance.GameEnding();
-                Camara.instance.m_Disable = false;
             }           
             Camara.instance.m_Disable = false;
             m_Player.SetActive(false);
@@ -305,15 +303,14 @@ public class PlayerBehaviour : MonoBehaviour
     IEnumerator AnimationWaterDelay()
     {
         yield return new WaitForSeconds(1f);
+        m_Player.SetActive(false);
         if (GameUI.instance != null)
         {
             GameUI.instance.GameEnding();
-            m_Player.SetActive(false);
         }
         if (GameUI_Portait.instance != null)
         {
             GameUI_Portait.instance.GameEnding();
-            m_Player.SetActive(false);
         }
 
     }

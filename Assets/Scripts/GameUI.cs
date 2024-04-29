@@ -91,7 +91,7 @@ public class GameUI : MonoBehaviour
         }
         else
         {
-            newRecordLabel.text = "Record: " + m_Record;
+            newRecordLabel.text = "Record: " + LevelBehaviour.instance.m_StepsCounter;
         }
     }
 
