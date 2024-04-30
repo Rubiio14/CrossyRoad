@@ -14,7 +14,7 @@ public class MovimientoTroncos : MonoBehaviour
     {
         if (transform.position != m_Waypoints[0].position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, m_Waypoints[0].position, m_LogSpeed * Time.deltaTime);           
+            transform.position = Vector3.MoveTowards(transform.position, m_Waypoints[0].position, m_LogSpeed * PlayerBehaviour.instance.m_VelocidadProps * Time.deltaTime);           
         }
         else
         {

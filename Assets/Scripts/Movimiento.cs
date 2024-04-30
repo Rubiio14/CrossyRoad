@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PropMov : MonoBehaviour
@@ -53,7 +51,7 @@ public class PropMov : MonoBehaviour
 
             if (m_DirectionNormalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
             {
-                LeanTween.move(m_Terrain, m_Terrain.transform.position + new Vector3(0, 0, -m_DirectionNormalized.z), m_Duration).setEase(LeanTweenType.easeOutQuad);
+                LeanTween.move(m_Terrain, m_Terrain.transform.position + new Vector3(0, 0, -m_DirectionNormalized.z) * LevelBehaviour.instance.m_PowerUpSalto, m_Duration).setEase(LeanTweenType.easeOutQuad);
             }
         }
     }

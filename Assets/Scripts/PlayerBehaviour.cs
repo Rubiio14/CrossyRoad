@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     //Coins Counter
     public int m_Coin = 0;
+    public int m_ValorMoneda = 1;
 
     //Movement Variables
     public float m_Offset = 100f;
@@ -13,6 +14,10 @@ public class PlayerBehaviour : MonoBehaviour
     public int m_StepsBack = 0; 
     public GameObject m_Player;
     public bool m_CanJump = false;
+
+    //PowerUps
+    public int m_Invulnerabilidad = 1;
+    public float m_VelocidadProps = 1f;
 
     //Static Variables
     public static PlayerBehaviour instance;
@@ -36,7 +41,7 @@ public class PlayerBehaviour : MonoBehaviour
     bool m_IsSoundPlaying;
 
     //Animations && Effects
-    private Animator anim;
+    public Animator anim;
     public ParticleSystem m_Particles;
     public void Awake()
     {
@@ -187,9 +192,13 @@ public class PlayerBehaviour : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Terrain"))
         {
-   
             m_CanJump = true;
             anim.SetBool("IsJumping", false);
+            if (PowerUps.instance.m_MonoSentado)
+            {
+                PowerUps.instance.MonoSentado();
+            }
+          
         }
 
         if (collision.gameObject.CompareTag("Death"))
@@ -211,27 +220,26 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Car"))
         {
-            
-            anim.SetBool("IsDead", true);
-            Camara.instance.m_Disable = false;
-            StartCoroutine(AnimationDelay());
-            m_carBeep.Play();
-            SwipeController.instance.enabled = false;
-            m_PlayerDeath.Play();
+            m_Invulnerabilidad--;
+            if (m_Invulnerabilidad == 0)
+            {
+                anim.SetBool("IsDead", true);
+                Camara.instance.m_Disable = false;
+                StartCoroutine(AnimationDelay());
+                m_carBeep.Play();
+                SwipeController.instance.enabled = false;
+                m_PlayerDeath.Play();
+            }    
         }
         if (collision.gameObject.CompareTag("Water"))
         {
-            
             m_Particles.transform.position = m_Player.transform.position;
             m_Particles.Play();
             m_WaterPlop.Play();
             m_Player.transform.localScale = Vector3.zero;
             SwipeController.instance.enabled = false;
             Camara.instance.m_Disable = false;
-            StartCoroutine(AnimationWaterDelay());
-            
-            
-            
+            StartCoroutine(AnimationWaterDelay()); 
         }
 
     }
@@ -251,7 +259,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            m_Coin++;
+            m_Coin += m_ValorMoneda;
             if (GameUI.instance != null) 
             {
                 //Landscape

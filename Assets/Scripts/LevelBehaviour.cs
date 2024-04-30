@@ -18,6 +18,10 @@ public class LevelBehaviour : MonoBehaviour
     public GameObject m_Terrain;
     public int m_StepsCounter = 0;
 
+    //PowerUps
+    public int m_PowerUpSalto = 1;
+    public int m_StopPropsSteps;
+
     //Boolean Variables
     public bool m_CanMove = true;
     private bool m_IsRecycled = false;
@@ -84,13 +88,17 @@ public class LevelBehaviour : MonoBehaviour
             
             if(m_Direction.normalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)
             {
-                LeanTween.move(m_Terrain, m_Terrain.transform.position + new Vector3(0, 0, -m_Direction.normalized.z), m_Duration).setEase(LeanTweenType.easeOutQuad);
+                LeanTween.move(m_Terrain, m_Terrain.transform.position + new Vector3(0, 0, -m_Direction.normalized.z) * m_PowerUpSalto, m_Duration).setEase(LeanTweenType.easeOutQuad);
             }
                
             //Steps Counter
             
             if (PlayerBehaviour.instance.m_StepsBack == 0 && m_Direction.z >= 0 && Mathf.Abs(m_Direction.x) < Mathf.Abs(m_Direction.z))
             {
+                if (PowerUps.instance.m_StopProps)
+                {
+                    PowerUps.instance.StopProps();
+                }
                 m_StepsCounter++;
                 if (Random.Range(0, 50) == Random.Range(0, 50))
                 { 
