@@ -54,7 +54,7 @@ public class GameUI_Portait : MonoBehaviour
     {
         m_Score = PlayerPrefs.GetInt("Score", LevelBehaviour.instance.m_StepsCounter);
         m_Record = PlayerPrefs.GetInt("Record", LevelBehaviour.instance.m_Record);
-        m_Coin = PlayerPrefs.GetInt("Monedas", PlayerBehaviour.instance.m_Coin);
+        m_Coin = PlayerPrefs.GetInt("Plátanos", PlayerBehaviour.instance.m_Coin);
         UpdateStepText();
     }
 
@@ -70,7 +70,7 @@ public class GameUI_Portait : MonoBehaviour
             PlayerPrefs.SetInt("Record", m_Record);
             PlayerPrefs.Save();
         }
-        PlayerPrefs.SetInt("Coins", PlayerBehaviour.instance.m_Coin);
+        PlayerPrefs.SetInt("Plátanos", PlayerBehaviour.instance.m_Coin);
         PlayerPrefs.Save();
         UpdateStepText();
     }
@@ -79,14 +79,14 @@ public class GameUI_Portait : MonoBehaviour
     private void UpdateStepText()
     {
         m_StepsText.text = "Score: " + LevelBehaviour.instance.m_StepsCounter;
-        m_CoinText.text = "Coins: " + PlayerBehaviour.instance.m_Coin;
+        m_CoinText.text = "Plátanos: " + PlayerBehaviour.instance.m_Coin;
     }
     
     public void GameEnding()
     {
         gameEndingScreen.SetActive(true);
         m_MenuPop.Play();
-        textEnding.text = "Coins: " + PlayerBehaviour.instance.m_Coin + "\nSteps: " + LevelBehaviour.instance.m_StepsCounter;
+        textEnding.text = "Plátanos: " + PlayerBehaviour.instance.m_Coin + "\nSteps: " + LevelBehaviour.instance.m_StepsCounter;
         m_HUD.SetActive(false);
         if (m_NewRecord)
         {
