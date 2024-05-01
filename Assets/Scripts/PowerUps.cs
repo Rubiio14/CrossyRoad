@@ -42,6 +42,12 @@ public class PowerUps : MonoBehaviour
     public GameObject m_CanvasCartasPortait;
     public List<GameObject> m_BotonesPortait;
 
+    //Audio
+    public AudioSource m_PowerUpSound;
+
+    //VFX
+    public ParticleSystem m_PowerUpParticle;
+
     public static PowerUps instance;
     void Awake()
     {
@@ -142,18 +148,22 @@ public class PowerUps : MonoBehaviour
             if (m_DobleMonedas == true)
             {
                 DobleMonedas();
+                m_PowerUpParticle.Stop();
             }
             if (m_SaltoLargo == true)
             {
                 SaltoLargo();
+                m_PowerUpParticle.Stop();
             }
             if (m_Invulnerabilidad == true)
             {
                 Invulnerabilidad();
+                m_PowerUpParticle.Stop();
             }
             if (m_Iman == true)
             {
                 Iman();
+                m_PowerUpParticle.Stop();
             }
         }
     }
@@ -165,6 +175,9 @@ public class PowerUps : MonoBehaviour
         m_CanvasCartasPortait.SetActive(false);
         ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
+        m_PowerUpSound.Play();
+        m_PowerUpParticle.Play();
+        
     }
     public void SaltoLargoActive()
     {
@@ -173,6 +186,9 @@ public class PowerUps : MonoBehaviour
         m_CanvasCartasPortait.SetActive(false);
         ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
+        m_PowerUpSound.Play();
+        m_PowerUpParticle.Play();
+        
     }
     public void InvulnerabilidadActive()
     {
@@ -181,6 +197,9 @@ public class PowerUps : MonoBehaviour
         m_CanvasCartasPortait.SetActive(false);
         ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
+        m_PowerUpSound.Play();
+        m_PowerUpParticle.Play();
+        
     }
     public void StopPropsActive()
     {
@@ -189,6 +208,9 @@ public class PowerUps : MonoBehaviour
         m_CanvasCartasPortait.SetActive(false);
         ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
+        m_PowerUpSound.Play();
+        m_PowerUpParticle.Play();
+        
     }
     public void MonoSentadoActive()
     {
@@ -197,6 +219,9 @@ public class PowerUps : MonoBehaviour
         m_CanvasCartasPortait.SetActive(false);
         ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
+        m_PowerUpSound.Play();
+        m_PowerUpParticle.Play();
+        
     }
     public void ImanActive()
     {
@@ -205,6 +230,9 @@ public class PowerUps : MonoBehaviour
         m_CanvasCartasPortait.SetActive(false);
         ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
+        m_PowerUpSound.Play();
+        m_PowerUpParticle.Play();
+        
     }
 
 

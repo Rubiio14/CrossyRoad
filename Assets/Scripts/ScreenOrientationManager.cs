@@ -8,6 +8,9 @@ public class ScreenOrientationManager : MonoBehaviour
     public Canvas m_PortraitPowerUpsCanvas;
     public Canvas m_LandscapePowerUpsCanvas;
     public bool m_Selected = false;
+    //Audio
+    public AudioSource m_MenuPop;
+
 
     public static ScreenOrientationManager instance;
 
@@ -39,10 +42,12 @@ public class ScreenOrientationManager : MonoBehaviour
         {
             m_PortraitCanvas.gameObject.SetActive(false);
             m_LandscapeCanvas.gameObject.SetActive(true);
+          
             if (!m_Selected)
             {
                 m_PortraitPowerUpsCanvas.gameObject.SetActive(false);
                 m_LandscapePowerUpsCanvas.gameObject.SetActive(true);
+                
             }
             // Corrected the spelling of "Camera"
             Camara.instance.LandScapeCamara(); // Assuming LandScapeCamara is a method in your Camera script
@@ -53,9 +58,13 @@ public class ScreenOrientationManager : MonoBehaviour
             {
                 m_PortraitPowerUpsCanvas.gameObject.SetActive(true);
                 m_LandscapePowerUpsCanvas.gameObject.SetActive(false);
+         
+
             }
             m_PortraitCanvas.gameObject.SetActive(true);
             m_LandscapeCanvas.gameObject.SetActive(false);
+           
+
             // Corrected the spelling of "Camera"
             Camara.instance.PortaitCamara(); // Assuming PortaitCamara is a method in your Camera script
         }

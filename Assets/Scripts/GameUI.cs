@@ -25,6 +25,10 @@ public class GameUI : MonoBehaviour
     public static GameUI instance;
     public bool m_NewRecord = false;
 
+    //Audio
+    public AudioSource m_ButtonSound;
+    public AudioSource m_MenuPop;
+
     public void Awake()
     {
         if (instance == null)
@@ -82,6 +86,7 @@ public class GameUI : MonoBehaviour
     public void GameEnding()
     {
         gameEndingScreen.SetActive(true);
+        m_MenuPop.Play();
         textEnding.text = "Coins: " + PlayerBehaviour.instance.m_Coin + "\nSteps: " + LevelBehaviour.instance.m_StepsCounter;
         m_HUD.SetActive(false);
         if (m_NewRecord)
@@ -98,10 +103,12 @@ public class GameUI : MonoBehaviour
     public void ResetButton()
     {
         SceneManager.LoadScene(1);
+        m_ButtonSound.Play();
     }
 
     public void MainMenuButton()
     {
         SceneManager.LoadScene(0);
+        m_ButtonSound.Play();
     }
 }

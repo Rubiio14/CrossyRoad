@@ -98,6 +98,7 @@ public class LevelBehaviour : MonoBehaviour
                 if (PowerUps.instance.m_StopProps)
                 {
                     PowerUps.instance.StopProps();
+                    PowerUps.instance.m_PowerUpParticle.Stop();
                 }
                 m_StepsCounter++;
                 if (Random.Range(0, 50) == Random.Range(0, 50))
