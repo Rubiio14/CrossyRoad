@@ -38,7 +38,7 @@ public class PropMov : MonoBehaviour
             if (Physics.Raycast(m_Player.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_HitInfo, 1f))
             {
                 //Debug.Log("Hit Something, Restricting Movement");
-                if (m_HitInfo.collider.tag != "ProceduralTerrain")
+                if (m_HitInfo.collider.tag == "Object" && m_HitInfo.collider.tag != "Car")
                 {
                     if (m_DirectionNormalized.z != 0)
                     {
