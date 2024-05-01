@@ -97,11 +97,11 @@ public class GameUI : MonoBehaviour
 
     public void ResetButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
-    public void OnApplicationQuit()
+    public void MainMenuButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }

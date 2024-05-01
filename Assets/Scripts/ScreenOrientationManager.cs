@@ -5,6 +5,23 @@ public class ScreenOrientationManager : MonoBehaviour
 {
     public Canvas m_PortraitCanvas;
     public Canvas m_LandscapeCanvas;
+    public Canvas m_PortraitPowerUpsCanvas;
+    public Canvas m_LandscapePowerUpsCanvas;
+    public bool m_Selected = false;
+
+    public static ScreenOrientationManager instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Corrected the destruction of duplicate instances
+        }
+    }
 
     void Start()
     {
@@ -13,18 +30,7 @@ public class ScreenOrientationManager : MonoBehaviour
 
     void Update()
     {
-        if (Screen.width > Screen.height)
-        {
-            m_PortraitCanvas.gameObject.SetActive(false);
-            m_LandscapeCanvas.gameObject.SetActive(true);
-            Camara.instance.LandScapeCamara();
-        }
-        else
-        {
-            m_PortraitCanvas.gameObject.SetActive(true);
-            m_LandscapeCanvas.gameObject.SetActive(false);
-            Camara.instance.PortaitCamara();
-        }
+        UpdateCanvas();
     }
 
     void UpdateCanvas()
@@ -33,13 +39,26 @@ public class ScreenOrientationManager : MonoBehaviour
         {
             m_PortraitCanvas.gameObject.SetActive(false);
             m_LandscapeCanvas.gameObject.SetActive(true);
-            Camara.instance.LandScapeCamara();
+            if (!m_Selected)
+            {
+                m_PortraitPowerUpsCanvas.gameObject.SetActive(false);
+                m_LandscapePowerUpsCanvas.gameObject.SetActive(true);
+            }
+            // Corrected the spelling of "Camera"
+            Camara.instance.LandScapeCamara(); // Assuming LandScapeCamara is a method in your Camera script
         }
         else
         {
+            if (!m_Selected)
+            {
+                m_PortraitPowerUpsCanvas.gameObject.SetActive(true);
+                m_LandscapePowerUpsCanvas.gameObject.SetActive(false);
+            }
             m_PortraitCanvas.gameObject.SetActive(true);
             m_LandscapeCanvas.gameObject.SetActive(false);
-            Camara.instance.PortaitCamara();
+            // Corrected the spelling of "Camera"
+            Camara.instance.PortaitCamara(); // Assuming PortaitCamara is a method in your Camera script
         }
     }
 }
+

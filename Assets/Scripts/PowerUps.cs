@@ -36,8 +36,11 @@ public class PowerUps : MonoBehaviour
     public int m_CoinValue = 2;
 
     //Canvas
-    public GameObject m_CanvasCartas;
-    public List<GameObject> m_Botones;
+    public GameObject m_CanvasCartasLandscape;
+    public List<GameObject> m_BotonesLandscape;
+
+    public GameObject m_CanvasCartasPortait;
+    public List<GameObject> m_BotonesPortait;
 
     public static PowerUps instance;
     void Awake()
@@ -55,11 +58,26 @@ public class PowerUps : MonoBehaviour
     private void Start()
     {
         SwipeController.instance.enabled = false;
-        int m_RandomIndex_1 = Random.Range(0, m_Botones.Count);
-        m_Botones[m_RandomIndex_1].SetActive(true);
-        m_Botones.RemoveAt(m_RandomIndex_1);
-        int m_RandomIndex_2 = Random.Range(0, m_Botones.Count);
-        m_Botones[m_RandomIndex_2].SetActive(true);
+
+        int count = m_BotonesLandscape.Count;
+
+        int m_RandomIndex_1 = Random.Range(0, count);
+        int m_RandomIndex_2 = Random.Range(0, count - 1);
+
+        // Ajusta el segundo índice si es igual al primero
+        if (m_RandomIndex_2 >= m_RandomIndex_1)
+            m_RandomIndex_2++;
+
+        Debug.Log(m_RandomIndex_1);
+        Debug.Log(m_RandomIndex_2);
+
+        // Landscape
+        m_BotonesLandscape[m_RandomIndex_1].SetActive(true);
+        m_BotonesLandscape[m_RandomIndex_2].SetActive(true);
+
+        // Portrait
+        m_BotonesPortait[m_RandomIndex_1].SetActive(true);
+        m_BotonesPortait[m_RandomIndex_2].SetActive(true);
     }
     void Update()
     {
@@ -143,37 +161,49 @@ public class PowerUps : MonoBehaviour
     public void DobleMonedasActive()
     {
         m_DobleMonedas = true;
-        m_CanvasCartas.SetActive(false);
+        m_CanvasCartasLandscape.SetActive(false);
+        m_CanvasCartasPortait.SetActive(false);
+        ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
     }
     public void SaltoLargoActive()
     {
         m_SaltoLargo = true;
-        m_CanvasCartas.SetActive(false);
+        m_CanvasCartasLandscape.SetActive(false);
+        m_CanvasCartasPortait.SetActive(false);
+        ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
     }
     public void InvulnerabilidadActive()
     {
         m_Invulnerabilidad = true;
-        m_CanvasCartas.SetActive(false);
+        m_CanvasCartasLandscape.SetActive(false);
+        m_CanvasCartasPortait.SetActive(false);
+        ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
     }
     public void StopPropsActive()
     {
         m_StopProps = true;
-        m_CanvasCartas.SetActive(false);
+        m_CanvasCartasLandscape.SetActive(false);
+        m_CanvasCartasPortait.SetActive(false);
+        ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
     }
     public void MonoSentadoActive()
     {
         m_MonoSentado = true;
-        m_CanvasCartas.SetActive(false);
+        m_CanvasCartasLandscape.SetActive(false);
+        m_CanvasCartasPortait.SetActive(false);
+        ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
     }
     public void ImanActive()
     {
         m_Iman = true;
-        m_CanvasCartas.SetActive(false);
+        m_CanvasCartasLandscape.SetActive(false);
+        m_CanvasCartasPortait.SetActive(false);
+        ScreenOrientationManager.instance.m_Selected = true;
         SwipeController.instance.enabled = true;
     }
 
