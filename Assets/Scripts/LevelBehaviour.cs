@@ -101,6 +101,21 @@ public class LevelBehaviour : MonoBehaviour
                     PowerUps.instance.m_PowerUpParticle.Stop();
                 }
                 m_StepsCounter++;
+                //Steps Canvas
+                PlayerPrefs.SetInt("Steps", m_StepsCounter);
+                PlayerPrefs.Save();
+
+                //UpdateStepsCanvas
+                if (GameUI.instance != null)
+                {
+                    GameUI.instance.LandsCapeUpdateStepText();
+                }
+
+                if (GameUI_Portait.instance != null)
+                {
+                    GameUI_Portait.instance.PortaitUpdateStepText();
+                }
+                    
                 if (Random.Range(0, 50) == Random.Range(0, 50))
                 { 
                     PlayerBehaviour.instance.m_MonkeySound.Play();

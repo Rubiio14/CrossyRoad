@@ -69,12 +69,13 @@ public class PlayerBehaviour : MonoBehaviour
         SwipeController.instance.OnMovement -= MoveTarget;
     }
 
-    private void Update()
+        void MoveTarget(Vector3 m_Direction)
     {
+        //Cars Sound
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 3f))
+        if (Physics.Raycast(ray, out hit, 5f))
         {
             // Verificar si el objeto tiene la etiqueta "Car"
             if (hit.collider.CompareTag("Car") && !m_IsSoundPlaying)
@@ -86,10 +87,7 @@ public class PlayerBehaviour : MonoBehaviour
                 StartCoroutine(ResetSoundState());
             }
         }
-    }
 
-        void MoveTarget(Vector3 m_Direction)
-    {
         if (m_CanJump)
         {
             RaycastHit m_Hitinfo;
@@ -99,7 +97,7 @@ public class PlayerBehaviour : MonoBehaviour
             if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), m_MoveDirection, out m_Hitinfo, 1f))
             {
 
-                //Debug.Log("Hit Something, Restricting Movement");
+                
 
                 m_RaycastDirection = m_Hitinfo;
                 if (m_Hitinfo.collider.tag == "Object")
@@ -261,6 +259,19 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             m_Coin += m_ValorMoneda;
+            //Canvas
+            PlayerPrefs.SetInt("Plátanos", m_Coin);
+            PlayerPrefs.Save();
+            //UpdateCoinsCanvas
+            if (GameUI.instance != null)
+            {
+                GameUI.instance.LandsCapeUpdateCoinsText();
+            }
+            if (GameUI_Portait.instance != null)
+            {
+                GameUI_Portait.instance.PortaitUpdateCoinsText();
+            }
+            
             if (GameUI.instance != null) 
             {
                 //Landscape

@@ -37,7 +37,7 @@ public class PropMov : MonoBehaviour
         {
             if (Physics.Raycast(m_Player.transform.position + new Vector3(0, 1f, 0), m_Direction, out m_HitInfo, 1f))
             {
-                //Debug.Log("Hit Something, Restricting Movement");
+               
                 if (m_HitInfo.collider.tag == "Object" && m_HitInfo.collider.tag != "Car")
                 {
                     if (m_DirectionNormalized.z != 0)
@@ -46,7 +46,7 @@ public class PropMov : MonoBehaviour
                     }
                 }
 
-                //Debug.DrawRay(transform.position + new Vector3(0, 1f, 0), transform.forward * m_HitInfo.distance, Color.red);
+               
             }
 
             if (m_DirectionNormalized.z >= 0 && PlayerBehaviour.instance.m_StepsBack == 0)

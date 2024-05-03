@@ -74,8 +74,7 @@ public class PowerUps : MonoBehaviour
         if (m_RandomIndex_2 >= m_RandomIndex_1)
             m_RandomIndex_2++;
 
-        Debug.Log(m_RandomIndex_1);
-        Debug.Log(m_RandomIndex_2);
+        
 
         // Landscape
         m_BotonesLandscape[m_RandomIndex_1].SetActive(true);
@@ -85,7 +84,7 @@ public class PowerUps : MonoBehaviour
         m_BotonesPortait[m_RandomIndex_1].SetActive(true);
         m_BotonesPortait[m_RandomIndex_2].SetActive(true);
     }
-    void Update()
+    void LateUpdate()
     {
         if (m_Iman == true)
         {

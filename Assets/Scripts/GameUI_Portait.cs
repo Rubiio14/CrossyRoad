@@ -46,23 +46,40 @@ public class GameUI_Portait : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_StepsText;
     [SerializeField] TextMeshProUGUI m_CoinText;
 
+    private int m_TotalCoins = 0;
     private int m_Record = 0;
     public int m_Coin = 0;
     public int m_Score = 0;
 
     public void Start()
     {
+        Debug.Log("Antes de sumar" + m_TotalCoins);
+        m_TotalCoins = PlayerPrefs.GetInt("TotalCoins", m_TotalCoins);
         m_Score = PlayerPrefs.GetInt("Score", LevelBehaviour.instance.m_StepsCounter);
         m_Record = PlayerPrefs.GetInt("Record", LevelBehaviour.instance.m_Record);
         m_Coin = PlayerPrefs.GetInt("Plátanos", PlayerBehaviour.instance.m_Coin);
-        UpdateStepText();
+        PortaitUpdateStepText();
+        PortaitUpdateCoinsText();
     }
 
-    public void Update()
-    {
-        PlayerPrefs.SetInt("Steps", LevelBehaviour.instance.m_StepsCounter);
-        PlayerPrefs.Save();
 
+    public void PortaitUpdateStepText()
+    {
+        m_StepsText.text = "Score: " + LevelBehaviour.instance.m_StepsCounter;
+    }
+    public void PortaitUpdateCoinsText()
+    {
+        m_CoinText.text = "Plátanos: " + PlayerBehaviour.instance.m_Coin;
+    }
+
+    public void GameEnding()
+    {
+        //Set TotalCoins
+        PlayerPrefs.SetInt("TotalCoins", m_TotalCoins + PlayerBehaviour.instance.m_Coin);
+        PlayerPrefs.Save();
+        Debug.Log("Después de sumar" + m_TotalCoins);
+
+        //SetRecord
         if (LevelBehaviour.instance.m_StepsCounter > m_Record)
         {
             m_NewRecord = true;
@@ -70,20 +87,7 @@ public class GameUI_Portait : MonoBehaviour
             PlayerPrefs.SetInt("Record", m_Record);
             PlayerPrefs.Save();
         }
-        PlayerPrefs.SetInt("Plátanos", PlayerBehaviour.instance.m_Coin);
-        PlayerPrefs.Save();
-        UpdateStepText();
-    }
 
-
-    private void UpdateStepText()
-    {
-        m_StepsText.text = "Score: " + LevelBehaviour.instance.m_StepsCounter;
-        m_CoinText.text = "Plátanos: " + PlayerBehaviour.instance.m_Coin;
-    }
-    
-    public void GameEnding()
-    {
         gameEndingScreen.SetActive(true);
         m_MenuPop.Play();
         textEnding.text = "Plátanos: " + PlayerBehaviour.instance.m_Coin + "\nSteps: " + LevelBehaviour.instance.m_StepsCounter;
@@ -101,7 +105,7 @@ public class GameUI_Portait : MonoBehaviour
 
     public void ResetButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         m_ButtonSound.Play();
     }
 

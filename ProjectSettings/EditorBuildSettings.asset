@@ -9,7 +9,19 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 149772d06a502db4dab330579953773a
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: "Assets/Scenes/C\xE9sped.unity"
+    guid: 07ac9196a3cd4334eb5abc6e3ee84c69
+  - enabled: 1
+    path: Assets/Scenes/Desierto.unity
+    guid: a41791546dd41284a8347eb93221f890
+  - enabled: 1
+    path: Assets/Scenes/Nieve.unity
+    guid: 7b8461feed85f3248b0255e7d28ed6f3
+  - enabled: 1
+    path: Assets/Scenes/CandyLand.unity
+    guid: fc6bfb98b4a056b43bb2c6ec50fc39f3
+  - enabled: 1
+    path: Assets/Scenes/ArcadeMode.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
