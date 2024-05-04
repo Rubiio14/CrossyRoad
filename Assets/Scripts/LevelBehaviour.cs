@@ -116,7 +116,7 @@ public class LevelBehaviour : MonoBehaviour
                     GameUI_Portait.instance.PortaitUpdateStepText();
                 }
                     
-                if (Random.Range(0, 50) == Random.Range(0, 50))
+                if (Random.Range(0, 40) == Random.Range(0, 40))
                 { 
                     PlayerBehaviour.instance.m_MonkeySound.Play();
                 }

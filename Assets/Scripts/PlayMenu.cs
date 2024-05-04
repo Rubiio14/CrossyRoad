@@ -17,10 +17,6 @@ public class PlayMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_CoinNeededText;
     [SerializeField] TextMeshProUGUI m_CoinText;
 
-    private void Start()
-    {
-        m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
-    }
     public void CéspedMode()
     {
         SceneManager.LoadScene(1);
@@ -28,7 +24,7 @@ public class PlayMenu : MonoBehaviour
     }
     public void DesiertoMode()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoDesierto)
+        if (PlayerPrefs.GetInt("IsSerpiente") == 1 && PlayerPrefs.GetInt("IsDesierto") == 1)
         {
             SceneManager.LoadScene(2);
             m_ButtonSound.Play();
@@ -37,12 +33,12 @@ public class PlayMenu : MonoBehaviour
         {
             m_Canvas.SetActive(true);
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas " + m_BloqueoDesierto + " monedas para desbloquear ésta zona";
+            m_CoinNeededText.text = "Necesitas comprar la serpiente y el Desierto en la tienda";
         }
     }
     public void NieveMode()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoNieve)
+        if (PlayerPrefs.GetInt("IsReno") == 1 && PlayerPrefs.GetInt("IsNieve") == 1)
         {
             SceneManager.LoadScene(3);
             m_ButtonSound.Play();
@@ -51,12 +47,12 @@ public class PlayMenu : MonoBehaviour
         {
             m_Canvas.SetActive(true);
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas " + m_BloqueoNieve + " monedas para desbloquear ésta zona";
+            m_CoinNeededText.text = "Necesitas comprar el reno y la Nieve en la tienda";
         }
     }
     public void CandyLandMode()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoCandyLand)
+        if (PlayerPrefs.GetInt("IsPajaro") == 1 && PlayerPrefs.GetInt("IsCandyLand") == 1)
         {
             SceneManager.LoadScene(4);
             this.gameObject.SetActive(false);
@@ -66,12 +62,12 @@ public class PlayMenu : MonoBehaviour
         {
             m_Canvas.SetActive(true);
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas " + m_BloqueoCandyLand + " monedas para desbloquear ésta zona";
+            m_CoinNeededText.text = "Necesitas comprar el pájaro y CandyLand en la tienda";
         }
     }
     public void ArcadeMode()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoArcade)
+        if (PlayerPrefs.GetInt("IsMonoEspecial") == 1 && PlayerPrefs.GetInt("IsArcade") == 1)
         {
             SceneManager.LoadScene(5);
             this.gameObject.SetActive(false);
@@ -81,13 +77,14 @@ public class PlayMenu : MonoBehaviour
         {
             m_Canvas.SetActive(true);
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas " + m_BloqueoArcade + " monedas para desbloquear ésta zona";
+            m_CoinNeededText.text = "Necesitas comprar el MonoEspecial y el modo Arcade en la tienda";
         }
     }
 
     public void VolverButton()
     {
         m_MainMenu.SetActive(true);
+        m_CoinText.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
         m_ButtonSound.Play();
     }
