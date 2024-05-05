@@ -8944,11 +8944,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1148682066818756815, guid: 84b7c8441f160174fa5c6f94cf397f0a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c77555fce85aa74da16fd6cadfac6b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9024,6 +9019,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2bd77caf41bb453429d4e10dd5f31e57, type: 2}
+    - target: {fileID: 1148682066818756815, guid: 84b7c8441f160174fa5c6f94cf397f0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12514,6 +12514,7 @@ MonoBehaviour:
   m_CoinText: {fileID: 1236431843}
   m_Coin: 0
   m_Score: 0
+  m_MonedaNivel: 'Ham: '
 --- !u!4 &238250804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -30020,7 +30021,7 @@ MonoBehaviour:
   m_CoinText: {fileID: 1082007901}
   m_Coin: 0
   m_Score: 0
-  m_MonedaNivel: 'Carne: '
+  m_MonedaNivel: 'Ham: '
 --- !u!1 &613585331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 868859769844269485, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -72130,7 +72131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Coin: 0
-  m_ValorMoneda: 1
+  m_ValorMoneda: 2
   m_Offset: 100
   m_Duration: 0.15
   m_StepsBack: 0

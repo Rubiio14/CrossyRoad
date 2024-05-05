@@ -132,7 +132,7 @@ public class PowerUps : MonoBehaviour
     }
     void DobleMonedas()
     {
-        PlayerBehaviour.instance.m_ValorMoneda = m_CoinValue;
+        PlayerBehaviour.instance.m_ValorMoneda = PlayerBehaviour.instance.m_ValorMoneda * m_CoinValue;
     }
 
     void SaltoLargo()

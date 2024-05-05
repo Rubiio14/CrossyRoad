@@ -9,8 +9,11 @@ public class MainMenu : MonoBehaviour
     public AudioSource m_ButtonSound;
     //Canvas 
     public GameObject m_Niveles;
+    public GameObject m_Niveles_Portait;
     public GameObject m_Tienda;
+    public GameObject m_Tienda_Portait;
     [SerializeField] TextMeshProUGUI m_CoinText;
+    [SerializeField] TextMeshProUGUI m_CoinText_Portait;
 
     private void Start()
     {
@@ -32,16 +35,35 @@ public class MainMenu : MonoBehaviour
 
     public void NivelesButton()
     {
-        m_Niveles.SetActive(true);
-        m_CoinText.gameObject.SetActive(true);
-        this.gameObject.SetActive(false);
-        m_ButtonSound.Play();
+        if (Screen.width > Screen.height)
+        {
+            m_Niveles.SetActive(true);
+            m_CoinText.gameObject.SetActive(true);
+            m_CoinText_Portait.gameObject.SetActive(false);
+            m_ButtonSound.Play();
+        }
+        else
+        {
+            m_Niveles_Portait.SetActive(true);
+            m_CoinText.gameObject.SetActive(false);
+            m_CoinText_Portait.gameObject.SetActive(true);
+            m_ButtonSound.Play();
+        }
     }
 
     public void TiendaButton()
     {
-        m_Tienda.SetActive(true);
-        m_CoinText.gameObject.SetActive(true);
-        m_ButtonSound.Play();
+        if (Screen.width > Screen.height)
+        {
+            m_Tienda.SetActive(true);
+            m_CoinText.gameObject.SetActive(true);
+            m_ButtonSound.Play();
+        }
+        else
+        {
+            m_Tienda_Portait.SetActive(true);
+            m_CoinText.gameObject.SetActive(true);
+            m_ButtonSound.Play();
+        }
     }
 }   

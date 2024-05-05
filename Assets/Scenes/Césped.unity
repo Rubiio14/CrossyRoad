@@ -11706,6 +11706,7 @@ MonoBehaviour:
   m_CoinText: {fileID: 1236431843}
   m_Coin: 0
   m_Score: 0
+  m_MonedaNivel: "Pl\xE1tanos: "
 --- !u!1 &238529943
 GameObject:
   m_ObjectHideFlags: 0
@@ -27913,6 +27914,7 @@ MonoBehaviour:
   m_CoinText: {fileID: 1082007901}
   m_Coin: 0
   m_Score: 0
+  m_MonedaNivel: "Pl\xE1tanos: "
 --- !u!4 &615121891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4111116904279595642, guid: 60d65e4eed2ca444d9a5224665294248,

@@ -25,8 +25,31 @@ public class Tienda : MonoBehaviour
     //Canvas
     [SerializeField] GameObject m_Escena;
     [SerializeField] TextMeshProUGUI m_CoinText;
+    [SerializeField] TextMeshProUGUI m_CoinText_Portait;
+    public GameObject m_Tienda;
+    public GameObject m_Tienda_Portait;
 
+    public void Update()
+    {
+        if (Screen.width > Screen.height)
+        {
+            m_Tienda.SetActive(true);
+            m_Tienda_Portait.SetActive(false);
+            m_CoinText.gameObject.SetActive(true);
+            m_CoinText_Portait.gameObject.SetActive(false);
+            
 
+        }
+        else
+        {
+            m_Tienda.SetActive(false);
+            m_Tienda_Portait.SetActive(true);
+            m_CoinText_Portait.gameObject.SetActive(true);
+            m_CoinText.gameObject.SetActive(false);
+            
+
+        }
+    }
     public void Serpiente()
     {
         if (PlayerPrefs.GetInt("TotalCoins") >= m_Serpiente && PlayerPrefs.GetInt("IsSerpiente") == 0)
@@ -47,7 +70,7 @@ public class Tienda : MonoBehaviour
     }
     public void Reno()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_Reno)
+        if (PlayerPrefs.GetInt("TotalCoins") >= m_Reno && PlayerPrefs.GetInt("IsReno") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_Reno);
             m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
@@ -65,7 +88,7 @@ public class Tienda : MonoBehaviour
     }
     public void Pajaro()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_Pajaro)
+        if (PlayerPrefs.GetInt("TotalCoins") >= m_Pajaro && PlayerPrefs.GetInt("IsPajaro") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_Pajaro);
             m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
@@ -83,7 +106,7 @@ public class Tienda : MonoBehaviour
     }
     public void MonoEspecial()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_MonoEspecial)
+        if (PlayerPrefs.GetInt("TotalCoins") >= m_MonoEspecial && PlayerPrefs.GetInt("IsMonoEspecial") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_MonoEspecial);
             m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
@@ -102,7 +125,7 @@ public class Tienda : MonoBehaviour
 
     public void Desierto()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoDesierto)
+        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoDesierto && PlayerPrefs.GetInt("IsDesierto") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoDesierto);
             m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
@@ -120,7 +143,7 @@ public class Tienda : MonoBehaviour
     }
     public void Nieve()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoNieve)
+        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoNieve && PlayerPrefs.GetInt("IsNieve") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoNieve);
             m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
@@ -138,7 +161,7 @@ public class Tienda : MonoBehaviour
     }
     public void Candyland()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoCandyLand)
+        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoCandyLand && PlayerPrefs.GetInt("IsCandyLand") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoCandyLand);
             m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
@@ -156,7 +179,7 @@ public class Tienda : MonoBehaviour
     }
     public void Arcade()
     {
-        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoArcade)
+        if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoArcade && PlayerPrefs.GetInt("IsArcade") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoArcade);
             m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
@@ -179,6 +202,7 @@ public class Tienda : MonoBehaviour
         m_ButtonSound.Play();
         this.gameObject.SetActive(false);
         m_CoinText.gameObject.SetActive(false);
+        m_CoinText_Portait.gameObject.SetActive(false);
     }
 
     public void sumarMonedas()

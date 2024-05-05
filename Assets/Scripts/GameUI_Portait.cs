@@ -50,7 +50,7 @@ public class GameUI_Portait : MonoBehaviour
     private int m_Record = 0;
     public int m_Coin = 0;
     public int m_Score = 0;
-
+    public string m_MonedaNivel = "Plátanos: ";
     public void Start()
     {
         Debug.Log("Antes de sumar" + m_TotalCoins);
@@ -69,7 +69,7 @@ public class GameUI_Portait : MonoBehaviour
     }
     public void PortaitUpdateCoinsText()
     {
-        m_CoinText.text = "Plátanos: " + PlayerBehaviour.instance.m_Coin;
+        m_CoinText.text = m_MonedaNivel + PlayerBehaviour.instance.m_Coin;
     }
 
     public void GameEnding()
@@ -90,7 +90,7 @@ public class GameUI_Portait : MonoBehaviour
 
         gameEndingScreen.SetActive(true);
         m_MenuPop.Play();
-        textEnding.text = "Plátanos: " + PlayerBehaviour.instance.m_Coin + "\nSteps: " + LevelBehaviour.instance.m_StepsCounter;
+        textEnding.text = m_MonedaNivel + PlayerBehaviour.instance.m_Coin + "\nSteps: " + LevelBehaviour.instance.m_StepsCounter;
         m_HUD.SetActive(false);
         if (m_NewRecord)
         {

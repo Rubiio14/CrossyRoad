@@ -14,8 +14,33 @@ public class PlayMenu : MonoBehaviour
     //Canvas
     [SerializeField] GameObject m_MainMenu;
     [SerializeField] GameObject m_Canvas;
+    [SerializeField] GameObject m_CanvasPortait;
     [SerializeField] TextMeshProUGUI m_CoinNeededText;
     [SerializeField] TextMeshProUGUI m_CoinText;
+    [SerializeField] TextMeshProUGUI m_CoinText_Portait;
+    public GameObject m_Niveles;
+    public GameObject m_Niveles_Portait;
+    public void Update()
+    {
+        if (Screen.width > Screen.height)
+        {
+            m_Niveles.SetActive(true);
+            m_Niveles_Portait.SetActive(false);
+            m_CoinText.gameObject.SetActive(true);
+            m_CoinText_Portait.gameObject.SetActive(false);
+            m_MainMenu.SetActive(false);
+
+        }
+        else
+        {
+            m_Niveles.SetActive(false);
+            m_Niveles_Portait.SetActive(true);
+            m_CoinText_Portait.gameObject.SetActive(true);
+            m_CoinText.gameObject.SetActive(false);
+            m_MainMenu.SetActive(false);
+
+        }
+    }
 
     public void CéspedMode()
     {
@@ -31,7 +56,17 @@ public class PlayMenu : MonoBehaviour
         }
         else 
         {
-            m_Canvas.SetActive(true);
+            if (Screen.width > Screen.height)
+            {
+                m_Canvas.SetActive(true);
+                m_CanvasPortait.SetActive(false);
+            }
+            else
+            {
+                m_Canvas.SetActive(false);
+                m_CanvasPortait.SetActive(true);
+            }
+            
             this.gameObject.SetActive(false);
             m_CoinNeededText.text = "Necesitas comprar la serpiente y el Desierto en la tienda";
         }
@@ -85,6 +120,7 @@ public class PlayMenu : MonoBehaviour
     {
         m_MainMenu.SetActive(true);
         m_CoinText.gameObject.SetActive(false);
+        m_CoinText_Portait.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
         m_ButtonSound.Play();
     }
