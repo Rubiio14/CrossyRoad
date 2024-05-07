@@ -15,9 +15,8 @@ public class PlayMenu : MonoBehaviour
     [SerializeField] GameObject m_MainMenu;
     [SerializeField] GameObject m_Canvas;
     [SerializeField] GameObject m_CanvasPortait;
-    [SerializeField] TextMeshProUGUI m_CoinNeededText;
-    [SerializeField] TextMeshProUGUI m_CoinText;
-    [SerializeField] TextMeshProUGUI m_CoinText_Portait;
+    [SerializeField] TextMeshProUGUI m_CoinNeededTextLandscape;
+    [SerializeField] TextMeshProUGUI m_CoinNeededTextPortait;
     public GameObject m_Niveles;
     public GameObject m_Niveles_Portait;
     public void Update()
@@ -26,8 +25,6 @@ public class PlayMenu : MonoBehaviour
         {
             m_Niveles.SetActive(true);
             m_Niveles_Portait.SetActive(false);
-            m_CoinText.gameObject.SetActive(true);
-            m_CoinText_Portait.gameObject.SetActive(false);
             m_MainMenu.SetActive(false);
 
         }
@@ -35,8 +32,6 @@ public class PlayMenu : MonoBehaviour
         {
             m_Niveles.SetActive(false);
             m_Niveles_Portait.SetActive(true);
-            m_CoinText_Portait.gameObject.SetActive(true);
-            m_CoinText.gameObject.SetActive(false);
             m_MainMenu.SetActive(false);
 
         }
@@ -68,7 +63,8 @@ public class PlayMenu : MonoBehaviour
             }
             
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas comprar la serpiente y el Desierto en la tienda";
+            m_CoinNeededTextLandscape.text = "You need to buy the snake and the Desert in the store";
+            m_CoinNeededTextPortait.text = "You need to buy the snake and the Desert in the store";
         }
     }
     public void NieveMode()
@@ -80,9 +76,20 @@ public class PlayMenu : MonoBehaviour
         }
         else
         {
-            m_Canvas.SetActive(true);
+            if (Screen.width > Screen.height)
+            {
+                m_Canvas.SetActive(true);
+                m_CanvasPortait.SetActive(false);
+            }
+            else
+            {
+                m_Canvas.SetActive(false);
+                m_CanvasPortait.SetActive(true);
+            }
+
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas comprar el reno y la Nieve en la tienda";
+            m_CoinNeededTextLandscape.text = "You need to buy the reindeer and the snowy terrain in the store.";
+            m_CoinNeededTextPortait.text = "You need to buy the reindeer and the snowy terrain in the store.";
         }
     }
     public void CandyLandMode()
@@ -95,9 +102,20 @@ public class PlayMenu : MonoBehaviour
         }
         else
         {
-            m_Canvas.SetActive(true);
+            if (Screen.width > Screen.height)
+            {
+                m_Canvas.SetActive(true);
+                m_CanvasPortait.SetActive(false);
+            }
+            else
+            {
+                m_Canvas.SetActive(false);
+                m_CanvasPortait.SetActive(true);
+            }
+
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas comprar el pájaro y CandyLand en la tienda";
+            m_CoinNeededTextLandscape.text = "You need to buy the bird and CandyLand in the store";
+            m_CoinNeededTextPortait.text = "You need to buy the bird and CandyLand in the store";
         }
     }
     public void ArcadeMode()
@@ -110,17 +128,26 @@ public class PlayMenu : MonoBehaviour
         }
         else
         {
-            m_Canvas.SetActive(true);
+            if (Screen.width > Screen.height)
+            {
+                m_Canvas.SetActive(true);
+                m_CanvasPortait.SetActive(false);
+            }
+            else
+            {
+                m_Canvas.SetActive(false);
+                m_CanvasPortait.SetActive(true);
+            }
+
             this.gameObject.SetActive(false);
-            m_CoinNeededText.text = "Necesitas comprar el MonoEspecial y el modo Arcade en la tienda";
+            m_CoinNeededTextLandscape.text = "You need to buy the golden monkey and the golden terrain in the store";
+            m_CoinNeededTextPortait.text = "You need to buy the golden monkey and the golden terrain in the store";
         }
     }
 
     public void VolverButton()
     {
         m_MainMenu.SetActive(true);
-        m_CoinText.gameObject.SetActive(false);
-        m_CoinText_Portait.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
         m_ButtonSound.Play();
     }
@@ -128,6 +155,7 @@ public class PlayMenu : MonoBehaviour
     public void ContinueButton()
     {
         m_Canvas.SetActive(false);
+        m_CanvasPortait.SetActive(false);
         m_ButtonSound.Play();
         this.gameObject.SetActive(true);
     }

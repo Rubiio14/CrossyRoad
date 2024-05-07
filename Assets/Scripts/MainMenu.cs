@@ -17,7 +17,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+        m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+        m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
         PlayerPrefs.SetInt("IsSerpiente", PlayerPrefs.GetInt("IsSerpiente"));
         PlayerPrefs.SetInt("IsReno", PlayerPrefs.GetInt("IsReno"));
         PlayerPrefs.SetInt("IsPajaro", PlayerPrefs.GetInt("IsPajaro"));
@@ -38,15 +39,11 @@ public class MainMenu : MonoBehaviour
         if (Screen.width > Screen.height)
         {
             m_Niveles.SetActive(true);
-            m_CoinText.gameObject.SetActive(true);
-            m_CoinText_Portait.gameObject.SetActive(false);
             m_ButtonSound.Play();
         }
         else
         {
             m_Niveles_Portait.SetActive(true);
-            m_CoinText.gameObject.SetActive(false);
-            m_CoinText_Portait.gameObject.SetActive(true);
             m_ButtonSound.Play();
         }
     }
@@ -62,7 +59,7 @@ public class MainMenu : MonoBehaviour
         else
         {
             m_Tienda_Portait.SetActive(true);
-            m_CoinText.gameObject.SetActive(true);
+            m_CoinText_Portait.gameObject.SetActive(true);
             m_ButtonSound.Play();
         }
     }

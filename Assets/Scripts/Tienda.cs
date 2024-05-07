@@ -28,6 +28,9 @@ public class Tienda : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_CoinText_Portait;
     public GameObject m_Tienda;
     public GameObject m_Tienda_Portait;
+    public GameObject m_Obtained;
+    [SerializeField] TextMeshProUGUI m_ObteinedText;
+
 
     public void Update()
     {
@@ -55,13 +58,17 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_Serpiente && PlayerPrefs.GetInt("IsSerpiente") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_Serpiente);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado la Serpiente");
             PlayerPrefs.SetInt("IsSerpiente", 1);
         }
         else if (PlayerPrefs.GetInt("IsSerpiente") == 1)
         {
-            Debug.Log("Ya tienes éste animal");
+            m_ObteinedText.text = "You already have this animal unlocked";
+            m_Obtained.SetActive(true);
+
+
         }
         else
         {
@@ -73,13 +80,15 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_Reno && PlayerPrefs.GetInt("IsReno") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_Reno);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado el reno");
             PlayerPrefs.SetInt("IsReno", 1);
         }
         else if (PlayerPrefs.GetInt("IsReno") == 1)
         {
-            Debug.Log("Ya tienes éste animal");
+            m_ObteinedText.text = "You already have this animal unlocked";
+            m_Obtained.SetActive(true);
         }
         else
         {
@@ -91,13 +100,15 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_Pajaro && PlayerPrefs.GetInt("IsPajaro") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_Pajaro);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado el pájaro");
             PlayerPrefs.SetInt("IsPajaro", 1);
         }
         else if (PlayerPrefs.GetInt("IsPajaro") == 1)
         {
-            Debug.Log("Ya tienes éste animal");
+            m_ObteinedText.text = "You already have this animal unlocked";
+            m_Obtained.SetActive(true);
         }
         else
         {
@@ -109,13 +120,15 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_MonoEspecial && PlayerPrefs.GetInt("IsMonoEspecial") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_MonoEspecial);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado el mono especial");
             PlayerPrefs.SetInt("IsMonoEspecial", 1);
         }
         else if (PlayerPrefs.GetInt("IsMonoEspecial") == 1)
         {
-            Debug.Log("Ya tienes éste animal");
+            m_ObteinedText.text = "You already have this animal unlocked";
+            m_Obtained.SetActive(true);
         }
         else
         {
@@ -128,13 +141,15 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoDesierto && PlayerPrefs.GetInt("IsDesierto") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoDesierto);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado el desierto");
             PlayerPrefs.SetInt("IsDesierto", 1);
         }
         else if (PlayerPrefs.GetInt("IsDesierto") == 1)
         {
-            Debug.Log("Ya tienes éste Nivel");
+            m_ObteinedText.text = "You already have this terrain unlocked";
+            m_Obtained.SetActive(true);
         }
         else
         {
@@ -146,13 +161,15 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoNieve && PlayerPrefs.GetInt("IsNieve") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoNieve);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado la nieve");
         PlayerPrefs.SetInt("IsNieve", 1);
         }
         else if (PlayerPrefs.GetInt("IsNieve") == 1)
         {
-            Debug.Log("Ya tienes éste Nivel");
+            m_ObteinedText.text = "You already have this terrain unlocked";
+            m_Obtained.SetActive(true);
         }
         else
         {
@@ -164,13 +181,15 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoCandyLand && PlayerPrefs.GetInt("IsCandyLand") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoCandyLand);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado CandyLand");
             PlayerPrefs.SetInt("IsCandyLand", 1);
         }
         else if (PlayerPrefs.GetInt("IsCandyLand") == 1)
         {
-            Debug.Log("Ya tienes éste Nivel");
+            m_ObteinedText.text = "You already have this terrain unlocked";
+            m_Obtained.SetActive(true);
         }
         else
         {
@@ -182,13 +201,15 @@ public class Tienda : MonoBehaviour
         if (PlayerPrefs.GetInt("TotalCoins") >= m_BloqueoArcade && PlayerPrefs.GetInt("IsArcade") == 0)
         {
             PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") - m_BloqueoArcade);
-            m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+            m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
             Debug.Log("Has Desbloqueado el modo Arcade");
             PlayerPrefs.SetInt("IsArcade", 1);
         }
         else if (PlayerPrefs.GetInt("IsArcade") == 1)
         {
-            Debug.Log("Ya tienes éste Nivel");
+            m_ObteinedText.text = "You already have this terrain unlocked";
+            m_Obtained.SetActive(true);
         }
         else
         {
@@ -208,6 +229,12 @@ public class Tienda : MonoBehaviour
     public void sumarMonedas()
     {
         PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") + 100);
-        m_CoinText.text = "Monedas: " + PlayerPrefs.GetInt("TotalCoins").ToString();
+        m_CoinText.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+        m_CoinText_Portait.text = "     " + PlayerPrefs.GetInt("TotalCoins").ToString();
+    }
+
+    public void QuitObtainedCanvas()
+    {
+        m_Obtained.SetActive(false);
     }
 }
