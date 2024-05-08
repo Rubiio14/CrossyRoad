@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1087755070}
   - {fileID: 1659329457}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &321088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1417676179}
   - {fileID: 1905251562}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &9368993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1635,7 +1635,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2006398400}
   - {fileID: 344781314}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &29253347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1672036754468148941, guid: 83daefb3cdc32ba45ba802efc195ea36,
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1123093980}
   - {fileID: 165397127}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &39741492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746176122859108529, guid: bc78c7ec5924f9849a1ac512e4181b9f,
@@ -2223,7 +2223,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1127451320}
   - {fileID: 18476507}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &45718195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6352616002136992155, guid: b2788c42126f14248ab2fdd78705c4d0,
@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1393197771}
   - {fileID: 526611604}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &45718198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2300,7 +2300,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1177236454}
   - {fileID: 1321505293}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &46570060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2424,7 +2424,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2006398400}
   - {fileID: 344781314}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &50205178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -4648,7 +4648,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1352640902}
   - {fileID: 738159748}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &93075193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -4945,7 +4945,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1989626958}
   - {fileID: 1118683255}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &95424586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -5862,7 +5862,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 106599796}
   - {fileID: 1325388531}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &122143862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -8546,7 +8546,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1989626958}
   - {fileID: 1118683255}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &197411778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -10074,7 +10074,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1417676179}
   - {fileID: 1905251562}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &234932049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11725,7 +11725,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1087755070}
   - {fileID: 1659329457}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &256926692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -11759,7 +11759,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1352640902}
   - {fileID: 738159748}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &257452958
 GameObject:
   m_ObjectHideFlags: 0
@@ -12008,7 +12008,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 868662415}
   - {fileID: 1269141989}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &265806599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12590,7 +12590,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 159484261}
   - {fileID: 411355826}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &282289034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13807,7 +13807,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 352381009}
   - {fileID: 948497894}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &298869483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14606,7 +14606,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 204809596}
   - {fileID: 658979008}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &318710331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14834,7 +14834,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1262019747}
   - {fileID: 1788017676}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &326036276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -14963,7 +14963,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 15877142}
   - {fileID: 762145768}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &330205912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15470,7 +15470,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1393197771}
   - {fileID: 526611604}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &344781313
 GameObject:
   m_ObjectHideFlags: 0
@@ -15879,7 +15879,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1989626958}
   - {fileID: 1118683255}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &352381008
 GameObject:
   m_ObjectHideFlags: 0
@@ -16203,7 +16203,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2006398400}
   - {fileID: 344781314}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &365528956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16342,7 +16342,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 204809596}
   - {fileID: 658979008}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &370096539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16912,7 +16912,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1123093980}
   - {fileID: 165397127}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &379078246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -17545,7 +17545,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 868662415}
   - {fileID: 1269141989}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &395257897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18151,7 +18151,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 859480417}
   - {fileID: 891817640}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &400707809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18206,7 +18206,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1606323948}
   - {fileID: 1879313561}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &403062343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19369,7 +19369,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 301057433}
   - {fileID: 1193129463}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &429341634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989,
@@ -20153,7 +20153,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2121127960}
   - {fileID: 924900495}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &441805157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -20341,7 +20341,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 204809596}
   - {fileID: 658979008}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &442772838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508086369766289148, guid: a187d477c9e9ed742817094f41b3cdeb,
@@ -20369,7 +20369,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 106599796}
   - {fileID: 1325388531}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &443469416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23152,7 +23152,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 193904486}
   - {fileID: 1392996732}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &495539275
 GameObject:
   m_ObjectHideFlags: 0
@@ -24582,7 +24582,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 352381009}
   - {fileID: 948497894}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &520641974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24733,7 +24733,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1606323948}
   - {fileID: 1879313561}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &526611603
 GameObject:
   m_ObjectHideFlags: 0
@@ -24985,7 +24985,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1116544362}
   - {fileID: 179330764}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &528633972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989,
@@ -25019,7 +25019,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1123093980}
   - {fileID: 165397127}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &528914741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -25962,7 +25962,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 15877142}
   - {fileID: 762145768}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &545539625
 GameObject:
   m_ObjectHideFlags: 0
@@ -27384,7 +27384,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1262019747}
   - {fileID: 1788017676}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &585122195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28093,7 +28093,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1417676179}
   - {fileID: 1905251562}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &602143951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29435,7 +29435,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1606323948}
   - {fileID: 1879313561}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &624505872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29846,7 +29846,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1606323948}
   - {fileID: 1879313561}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &629164327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30973,7 +30973,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1123093980}
   - {fileID: 165397127}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &653764684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -32512,7 +32512,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1123093980}
   - {fileID: 165397127}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &690007095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34452,7 +34452,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 193904486}
   - {fileID: 1392996732}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &729046155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -35135,7 +35135,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1606323948}
   - {fileID: 1879313561}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &741995846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -36047,7 +36047,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1177236454}
   - {fileID: 1321505293}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &763563321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36629,7 +36629,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1087755070}
   - {fileID: 1659329457}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &768243796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36760,7 +36760,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1203671317}
   - {fileID: 2012328652}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &769875063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37133,7 +37133,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1574832853}
   - {fileID: 1722284523}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &772056237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37182,7 +37182,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2121127960}
   - {fileID: 924900495}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &773491091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38039,7 +38039,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1116544362}
   - {fileID: 179330764}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &794156247
 GameObject:
   m_ObjectHideFlags: 0
@@ -38716,7 +38716,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1418169039}
   - {fileID: 1530687529}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &807584616 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508086369766289148, guid: a187d477c9e9ed742817094f41b3cdeb,
@@ -38744,7 +38744,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1418169039}
   - {fileID: 1530687529}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &808136788 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6352616002136992155, guid: b2788c42126f14248ab2fdd78705c4d0,
@@ -38772,7 +38772,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1417676179}
   - {fileID: 1905251562}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &808136791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39677,7 +39677,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1127451320}
   - {fileID: 18476507}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &823582716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1672036754468148941, guid: 83daefb3cdc32ba45ba802efc195ea36,
@@ -40253,7 +40253,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1127451320}
   - {fileID: 18476507}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &834148041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42282,7 +42282,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 376976441}
   - {fileID: 1885675073}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &877533107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3569279380451398375, guid: a1b4d59e2c59e8048925614a19a521a4,
@@ -42756,7 +42756,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1352640902}
   - {fileID: 738159748}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &890878925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43864,7 +43864,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1393197771}
   - {fileID: 526611604}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &916790480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44175,7 +44175,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 301057433}
   - {fileID: 1193129463}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &924554410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6352616002136992155, guid: b2788c42126f14248ab2fdd78705c4d0,
@@ -44203,7 +44203,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1127451320}
   - {fileID: 18476507}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &924554413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46070,7 +46070,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1352640902}
   - {fileID: 738159748}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &955272279
 GameObject:
   m_ObjectHideFlags: 0
@@ -46242,7 +46242,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1087755070}
   - {fileID: 1659329457}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &957406575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -47281,7 +47281,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1203671317}
   - {fileID: 2012328652}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &986812710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746176122859108529, guid: bc78c7ec5924f9849a1ac512e4181b9f,
@@ -47508,7 +47508,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1352640902}
   - {fileID: 738159748}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &990609781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48166,7 +48166,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1127451320}
   - {fileID: 18476507}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &997408806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50394,7 +50394,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1393197771}
   - {fileID: 526611604}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1030965426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50500,7 +50500,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1262019747}
   - {fileID: 1788017676}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1038354856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50809,7 +50809,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1262019747}
   - {fileID: 1788017676}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1044869528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -51342,7 +51342,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1989626958}
   - {fileID: 1118683255}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1063923967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52058,7 +52058,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1989626958}
   - {fileID: 1118683255}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1075962040
 GameObject:
   m_ObjectHideFlags: 0
@@ -52586,7 +52586,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1203671317}
   - {fileID: 2012328652}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1082171110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54694,7 +54694,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1203671317}
   - {fileID: 2012328652}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &1126392354
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54892,7 +54892,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1574832853}
   - {fileID: 1722284523}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1131007620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55117,7 +55117,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 352381009}
   - {fileID: 948497894}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1132650199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57162,7 +57162,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1123093980}
   - {fileID: 165397127}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1183631698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57815,7 +57815,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 159484261}
   - {fileID: 411355826}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1189089348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -58502,7 +58502,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2006398400}
   - {fileID: 344781314}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1199219583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -59665,7 +59665,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 193904486}
   - {fileID: 1392996732}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1222762222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62653,7 +62653,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1177236454}
   - {fileID: 1321505293}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1284277790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64388,7 +64388,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1744517151}
   - {fileID: 88783692}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &1319774983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64857,7 +64857,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 794156248}
   - {fileID: 675355596}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1331930133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1672036754468148941, guid: 83daefb3cdc32ba45ba802efc195ea36,
@@ -65293,7 +65293,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1116544362}
   - {fileID: 179330764}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &1343133949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65528,7 +65528,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 868662415}
   - {fileID: 1269141989}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1347875427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65900,7 +65900,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 376976441}
   - {fileID: 1885675073}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1354070873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66051,7 +66051,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1087755070}
   - {fileID: 1659329457}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1358417345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1672036754468148941, guid: 83daefb3cdc32ba45ba802efc195ea36,
@@ -66776,7 +66776,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2006398400}
   - {fileID: 344781314}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &1372087839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5285174987729393547, guid: 788f99c0acce4384a91a6c213fb34068,
@@ -66804,7 +66804,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2121127960}
   - {fileID: 924900495}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &1372297896
 GameObject:
   m_ObjectHideFlags: 0
@@ -68500,7 +68500,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1262019747}
   - {fileID: 1788017676}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1404890659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68975,7 +68975,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2121127960}
   - {fileID: 924900495}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1416188574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -69384,7 +69384,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 301057433}
   - {fileID: 1193129463}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1427870925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -70655,7 +70655,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 868662415}
   - {fileID: 1269141989}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1454153214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71744,7 +71744,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 106599796}
   - {fileID: 1325388531}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1473627995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -71778,7 +71778,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 376976441}
   - {fileID: 1885675073}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1474192347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72096,7 +72096,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 794156248}
   - {fileID: 675355596}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1480253946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4111116904279595642, guid: 60d65e4eed2ca444d9a5224665294248,
@@ -72240,7 +72240,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1177236454}
   - {fileID: 1321505293}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1484581901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1672036754468148941, guid: 83daefb3cdc32ba45ba802efc195ea36,
@@ -72274,7 +72274,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 794156248}
   - {fileID: 675355596}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1485591327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72458,7 +72458,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 376976441}
   - {fileID: 1885675073}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1486417203 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3622670526511579328, guid: 60d65e4eed2ca444d9a5224665294248,
@@ -73046,7 +73046,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 106599796}
   - {fileID: 1325388531}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1498317042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -73945,7 +73945,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1574832853}
   - {fileID: 1722284523}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1516094278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -74512,7 +74512,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 15877142}
   - {fileID: 762145768}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1530687528
 GameObject:
   m_ObjectHideFlags: 0
@@ -74593,7 +74593,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 352381009}
   - {fileID: 948497894}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1531720930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -74840,7 +74840,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1744517151}
   - {fileID: 88783692}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1537919751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75318,7 +75318,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1574832853}
   - {fileID: 1722284523}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &1552915319
 GameObject:
   m_ObjectHideFlags: 0
@@ -75986,7 +75986,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1574832853}
   - {fileID: 1722284523}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1559428974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -76236,7 +76236,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 159484261}
   - {fileID: 411355826}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1562187433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4111116904279595642, guid: 60d65e4eed2ca444d9a5224665294248,
@@ -78322,7 +78322,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 794156248}
   - {fileID: 675355596}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1594994627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6352616002136992155, guid: b2788c42126f14248ab2fdd78705c4d0,
@@ -78350,7 +78350,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 204809596}
   - {fileID: 658979008}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &1594994630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78594,7 +78594,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 204809596}
   - {fileID: 658979008}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &1606323947
 GameObject:
   m_ObjectHideFlags: 0
@@ -78765,7 +78765,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 159484261}
   - {fileID: 411355826}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1608701658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508086369766289148, guid: a187d477c9e9ed742817094f41b3cdeb,
@@ -78793,7 +78793,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 376976441}
   - {fileID: 1885675073}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1610294001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746176122859108529, guid: bc78c7ec5924f9849a1ac512e4181b9f,
@@ -79015,7 +79015,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1203671317}
   - {fileID: 2012328652}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1616554952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79312,7 +79312,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1418169039}
   - {fileID: 1530687529}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1625766001
 GameObject:
   m_ObjectHideFlags: 0
@@ -81490,7 +81490,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1262019747}
   - {fileID: 1788017676}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1648229391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -82347,7 +82347,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 193904486}
   - {fileID: 1392996732}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1661638277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746176122859108529, guid: bc78c7ec5924f9849a1ac512e4181b9f,
@@ -82381,7 +82381,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 301057433}
   - {fileID: 1193129463}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &1662487202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83105,7 +83105,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 15877142}
   - {fileID: 762145768}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1671166606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83418,7 +83418,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1606323948}
   - {fileID: 1879313561}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1678238236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508086369766289148, guid: a187d477c9e9ed742817094f41b3cdeb,
@@ -83446,7 +83446,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1177236454}
   - {fileID: 1321505293}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1678274489 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -84481,7 +84481,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 859480417}
   - {fileID: 891817640}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &1701596001
 GameObject:
   m_ObjectHideFlags: 0
@@ -84734,7 +84734,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 106599796}
   - {fileID: 1325388531}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1707596178
 GameObject:
   m_ObjectHideFlags: 0
@@ -84818,7 +84818,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1087755070}
   - {fileID: 1659329457}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1709721234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508086369766289148, guid: a187d477c9e9ed742817094f41b3cdeb,
@@ -84846,7 +84846,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 106599796}
   - {fileID: 1325388531}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1710940785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85684,7 +85684,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 159484261}
   - {fileID: 411355826}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1723358228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -86172,7 +86172,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1418169039}
   - {fileID: 1530687529}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1733323099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86599,7 +86599,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 301057433}
   - {fileID: 1193129463}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1736955541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746176122859108529, guid: bc78c7ec5924f9849a1ac512e4181b9f,
@@ -87155,7 +87155,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1744517151}
   - {fileID: 88783692}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1750685948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -88909,7 +88909,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1418169039}
   - {fileID: 1530687529}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1808689500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3622670526511579328, guid: 60d65e4eed2ca444d9a5224665294248,
@@ -90043,7 +90043,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1116544362}
   - {fileID: 179330764}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1844079748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -90302,7 +90302,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 159484261}
   - {fileID: 411355826}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1847798712 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8934234302468195902, guid: 40b5728c9a8fc364cbfbaadcdeb1af64,
@@ -90330,7 +90330,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 2121127960}
   - {fileID: 924900495}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1848619017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1672036754468148941, guid: 83daefb3cdc32ba45ba802efc195ea36,
@@ -91317,7 +91317,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 193904486}
   - {fileID: 1392996732}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1869547015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92090,7 +92090,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 868662415}
   - {fileID: 1269141989}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &1883436631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92273,7 +92273,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 859480417}
   - {fileID: 891817640}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1892377567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92618,7 +92618,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 352381009}
   - {fileID: 948497894}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!65 &1898724279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93226,7 +93226,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1744517151}
   - {fileID: 88783692}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1908621244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4111116904279595642, guid: 60d65e4eed2ca444d9a5224665294248,
@@ -93628,7 +93628,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1116544362}
   - {fileID: 179330764}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &1924816377
 GameObject:
   m_ObjectHideFlags: 0
@@ -93797,7 +93797,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1744517151}
   - {fileID: 88783692}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1 &1929950593
 GameObject:
   m_ObjectHideFlags: 0
@@ -93966,7 +93966,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1417676179}
   - {fileID: 1905251562}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &1933971687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -94343,7 +94343,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 376976441}
   - {fileID: 1885675073}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1948360615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94481,7 +94481,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1393197771}
   - {fileID: 526611604}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &1949903898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94731,7 +94731,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 15877142}
   - {fileID: 762145768}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1953997892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94949,7 +94949,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1989626958}
   - {fileID: 1118683255}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &1959455132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96594,7 +96594,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 15877142}
   - {fileID: 762145768}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &1993401735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508086369766289148, guid: a187d477c9e9ed742817094f41b3cdeb,
@@ -96622,7 +96622,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 794156248}
   - {fileID: 675355596}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &1994314328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -97666,7 +97666,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1352640902}
   - {fileID: 738159748}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &2017741802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523860081394211607, guid: 9d9016a93e2afb14993f9ab42254fc2b,
@@ -98256,7 +98256,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 794156248}
   - {fileID: 675355596}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &2034398107
 GameObject:
   m_ObjectHideFlags: 0
@@ -98826,7 +98826,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 193904486}
   - {fileID: 1392996732}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1 &2041275878
 GameObject:
   m_ObjectHideFlags: 0
@@ -100064,7 +100064,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 859480417}
   - {fileID: 891817640}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!1001 &2065903623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100202,7 +100202,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1177236454}
   - {fileID: 1321505293}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!1001 &2070318372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101869,7 +101869,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 859480417}
   - {fileID: 891817640}
-  m_CarSpeed: 2
+  m_CarSpeed: 4
 --- !u!4 &2118758373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
@@ -103099,7 +103099,7 @@ MonoBehaviour:
   m_Waypoints:
   - {fileID: 1418169039}
   - {fileID: 1530687529}
-  m_LogSpeed: 2
+  m_LogSpeed: 4
 --- !u!4 &2137417846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4010654440807929438, guid: 9cc45cbe54813474c945d1f50984df82,
