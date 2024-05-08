@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("IsSerpiente", PlayerPrefs.GetInt("IsSerpiente"));
         PlayerPrefs.SetInt("IsReno", PlayerPrefs.GetInt("IsReno"));
         PlayerPrefs.SetInt("IsPajaro", PlayerPrefs.GetInt("IsPajaro"));
-        PlayerPrefs.SetInt("IsMonoEspecial", PlayerPrefs.GetInt("IsMonoEspacial"));
+        PlayerPrefs.SetInt("IsMonoEspecial", PlayerPrefs.GetInt("IsMonoEspecial"));
         PlayerPrefs.SetInt("IsDesierto", PlayerPrefs.GetInt("IsDesierto"));
         PlayerPrefs.SetInt("IsNieve", PlayerPrefs.GetInt("IsNieve"));
         PlayerPrefs.SetInt("IsCandyLand", PlayerPrefs.GetInt("IsCandyLand"));
@@ -62,5 +62,17 @@ public class MainMenu : MonoBehaviour
             m_CoinText_Portait.gameObject.SetActive(true);
             m_ButtonSound.Play();
         }
+    }
+
+    public void PlayerPrefsReset()
+    {
+        PlayerPrefs.SetInt("IsSerpiente", 0);
+        PlayerPrefs.SetInt("IsReno", 0);
+        PlayerPrefs.SetInt("IsPajaro", 0);
+        PlayerPrefs.SetInt("IsMonoEspecial", 0);
+        PlayerPrefs.SetInt("IsDesierto", 0);
+        PlayerPrefs.SetInt("IsNieve",0);
+        PlayerPrefs.SetInt("IsCandyLand", 0);
+        PlayerPrefs.SetInt("IsArcade", 0);
     }
 }   

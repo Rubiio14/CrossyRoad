@@ -11124,7 +11124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 644390319}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ResetPlayerPrefs
+        m_MethodName: PlayerPrefsReset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
